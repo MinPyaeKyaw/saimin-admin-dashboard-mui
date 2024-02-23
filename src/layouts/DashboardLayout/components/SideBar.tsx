@@ -1,5 +1,5 @@
-import { SIDEBAR_WIDTH } from '@configs/ui-consts';
 import { Box, Typography, useTheme } from '@mui/material';
+import { SIDEBAR_WIDTH } from '@configs/ui-consts';
 
 export function SideBar() {
   const theme = useTheme();

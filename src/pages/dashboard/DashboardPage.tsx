@@ -1,6 +1,6 @@
 import { Button, Typography } from '@mui/material';
-import useUserPreferencesStore from '@stores/userPreferencesStore';
 import { useTranslation } from 'react-i18next';
+import useUserPreferencesStore from '@stores/userPreferencesStore';
 
 export function DashboardPage() {
   const { t, i18n } = useTranslation();

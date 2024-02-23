@@ -92,15 +92,11 @@
             "group": "internal"
           },
           {
-            "pattern": "@config/**",
+            "pattern": "@configs/**",
             "group": "internal"
           },
           {
             "pattern": "@hooks/**",
-            "group": "internal"
-          },
-          {
-            "pattern": "@layouts",
             "group": "internal"
           },
           {
@@ -116,7 +112,15 @@
             "group": "internal"
           },
           {
-            "pattern": "@utils/**",
+            "pattern": "@helpers/**",
+            "group": "internal"
+          },
+          {
+            "pattern": "@routers/**",
+            "group": "internal"
+          },
+          {
+            "pattern": "@stores/**",
             "group": "internal"
           }
         ],

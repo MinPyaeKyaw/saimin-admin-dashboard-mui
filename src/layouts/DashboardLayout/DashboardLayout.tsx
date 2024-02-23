@@ -1,7 +1,7 @@
-import { SIDEBAR_WIDTH } from '@configs/ui-consts';
 import { Box, Stack } from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline';
 import { Outlet } from '@tanstack/react-router';
+import { SIDEBAR_WIDTH } from '@configs/ui-consts';
 import { MenuBar, SideBar } from './components';
 
 export function DashboardLayout() {

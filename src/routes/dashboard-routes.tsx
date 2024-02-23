@@ -1,7 +1,7 @@
 import { createRouter, createRoute } from '@tanstack/react-router';
+import { Error404 } from '@components/pages';
 import { DashboardPage, PostsPage } from '@pages/index';
 import { dashboardRoot } from './root-routes';
-import { Error404 } from '@components/pages';
 
 const dashboardRoute = createRoute({
   getParentRoute: () => dashboardRoot,

@@ -1,8 +1,8 @@
 import { ReactNode } from 'react';
 import { ThemeProvider } from '@mui/material';
 import useUserPreferencesStore from '@stores/userPreferencesStore';
-import { getTheme } from './theme';
 import { ErrorBoundary } from './ErrorBoundary';
+import { getTheme } from './theme';
 
 interface Props {
   children: ReactNode;

@@ -1,5 +1,5 @@
-import { MENUBAR_HEIGHT } from '@configs/ui-consts';
 import { Stack, Typography } from '@mui/material';
+import { MENUBAR_HEIGHT } from '@configs/ui-consts';
 
 export function MenuBar() {
   return (
