@@ -1,6 +1,7 @@
 import { createRouter, createRoute } from '@tanstack/react-router';
 import { DashboardPage, PostsPage } from '@pages/index';
 import { dashboardRoot } from './root-routes';
+import { Error404 } from '@components/pages';
 
 const dashboardRoute = createRoute({
   getParentRoute: () => dashboardRoot,
@@ -14,6 +15,16 @@ const postsRoute = createRoute({
   component: () => <PostsPage />,
 });
 
-const routeTree = dashboardRoot.addChildren([dashboardRoute, postsRoute]);
+const notFoundRoute = createRoute({
+  getParentRoute: () => dashboardRoot,
+  path: '/*',
+  component: () => <Error404 />,
+});
+
+const routeTree = dashboardRoot.addChildren([
+  dashboardRoute,
+  postsRoute,
+  notFoundRoute,
+]);
 
 export const dashboardRouter = createRouter({ routeTree });
