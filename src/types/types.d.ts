@@ -8,6 +8,8 @@ declare global {
   interface UserPreferences {
     mode: ModeType;
     lang: LangType;
+    sidebarOpen: boolean;
+    toggleSidebar: (value: boolean) => void;
     changeMode: (mode: ModeType) => void;
     changeLang: (lang: LangType) => void;
   }

@@ -1,15 +1,18 @@
 import { Box, Stack } from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline';
 import { Outlet } from '@tanstack/react-router';
-import { SIDEBAR_WIDTH } from '@configs/ui-consts';
+import { getSidebarWidth } from '@helpers/ui';
+import useUserPreferencesStore from '@stores/userPreferencesStore';
 import { MenuBar, SideBar } from './components';
 
 export function DashboardLayout() {
+  const { sidebarOpen } = useUserPreferencesStore();
+
   return (
     <>
       <CssBaseline />
       <Stack direction="row">
-        <Box sx={{ width: SIDEBAR_WIDTH }}>
+        <Box sx={{ width: getSidebarWidth(sidebarOpen) }}>
           <SideBar />
         </Box>
 

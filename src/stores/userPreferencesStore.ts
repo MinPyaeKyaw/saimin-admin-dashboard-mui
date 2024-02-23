@@ -9,6 +9,9 @@ const useUserPreferencesStore = create<
     (set) => ({
       mode: 'light',
       lang: 'en',
+      sidebarOpen: true,
+      toggleSidebar: (value) =>
+        set((state) => ({ ...state, sidebarOpen: value })),
       changeLang: (lang) => set((state) => ({ ...state, lang })),
       changeMode: (mode) => set((state) => ({ ...state, mode })),
     }),
