@@ -1,2 +1,2 @@
-export * from './SideBar'
-export * from './MenuBar'
+export * from './SideBar';
+export * from './MenuBar';

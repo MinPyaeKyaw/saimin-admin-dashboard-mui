@@ -25,7 +25,7 @@
     "no-nested-ternary": "off",
     // tanstack query
     "@tanstack/query/exhaustive-deps": "error",
-    "@tanstack/query/prefer-query-object-syntax": "error",
+    "@tanstack/query/prefer-query-object-syntax": "off",
     // prettier
     "prettier/prettier": [
       "error",

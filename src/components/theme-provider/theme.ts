@@ -1,6 +1,6 @@
-import { Theme, createTheme } from '@mui/material'
-import { palette } from './palette'
-import { components } from './components'
+import { Theme, createTheme } from '@mui/material';
+import { components } from './components';
+import { palette } from './palette';
 
 /**
  * @param mode only dark and light are available
@@ -13,5 +13,5 @@ export const getTheme = (mode: 'dark' | 'light'): Theme => {
       ...palette,
     },
     components,
-  })
-}
+  });
+};

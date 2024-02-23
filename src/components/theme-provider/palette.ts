@@ -1,4 +1,4 @@
-import { pink } from '@mui/material/colors'
+import { pink } from '@mui/material/colors';
 
 /**
  * Customizable config of MUI Colors
@@ -6,4 +6,4 @@ import { pink } from '@mui/material/colors'
 export const palette = {
   primary: pink,
   secondary: pink,
-}
+};
