@@ -10,8 +10,7 @@
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended",
-    "plugin:@tanstack/eslint-plugin-query/recommended"
+    "plugin:prettier/recommended"
   ],
   "overrides": [],
   "parser": "@typescript-eslint/parser",
@@ -23,9 +22,6 @@
   "plugins": ["react", "@typescript-eslint", "@tanstack/query"],
   "rules": {
     "no-nested-ternary": "off",
-    // tanstack query
-    "@tanstack/query/exhaustive-deps": "error",
-    "@tanstack/query/prefer-query-object-syntax": "off",
     // prettier
     "prettier/prettier": [
       "error",
