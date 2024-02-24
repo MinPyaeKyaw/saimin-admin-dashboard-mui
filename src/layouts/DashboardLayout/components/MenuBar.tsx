@@ -1,6 +1,5 @@
 import FormatIndentDecreaseIcon from '@mui/icons-material/FormatIndentDecrease';
 import FormatIndentIncreaseIcon from '@mui/icons-material/FormatIndentIncrease';
-import NotificationsIcon from '@mui/icons-material/Notifications';
 import {
   Avatar,
   Box,
@@ -9,6 +8,7 @@ import {
   Tooltip,
   useTheme,
 } from '@mui/material';
+import NotificationsIcon from '@mui/icons-material/Notifications';
 import { ChangeLangDropdown } from '@components/dropdowns';
 import {
   DASHBOARD_LAYOUT_PADDING,
