@@ -1,10 +1,11 @@
 import { Button, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import useUserPreferencesStore from '@stores/userPreferencesStore';
+import { ChangeLangDropdown } from '@components/dropdowns';
 
 export function DashboardPage() {
   const { t, i18n } = useTranslation();
-  const { changeMode, mode, changeLang } = useUserPreferencesStore();
+  const { changeMode, mode } = useUserPreferencesStore();
 
   const handleChangeMode = (): void => {
     if (mode === 'light') {
@@ -14,23 +15,14 @@ export function DashboardPage() {
     }
   };
 
-  const handleChangeLang = (): void => {
-    if (i18n.language === 'en') {
-      i18n.changeLanguage('mm');
-    } else {
-      i18n.changeLanguage('en');
-    }
-    changeLang(i18n.language as LangType);
-  };
-
   return (
     <>
       <Button onClick={handleChangeMode} variant="contained">
         change mode
       </Button>
-      <Button onClick={handleChangeLang} variant="contained">
-        change language
-      </Button>
+
+      <ChangeLangDropdown />
+
       <Typography variant="h1" component="h2">
         {i18n.language}
       </Typography>

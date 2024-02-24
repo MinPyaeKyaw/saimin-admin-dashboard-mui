@@ -1,6 +1,15 @@
 import FormatIndentDecreaseIcon from '@mui/icons-material/FormatIndentDecrease';
 import FormatIndentIncreaseIcon from '@mui/icons-material/FormatIndentIncrease';
-import { Box, IconButton, Stack, Typography, useTheme } from '@mui/material';
+import NotificationsIcon from '@mui/icons-material/Notifications';
+import {
+  Avatar,
+  Box,
+  IconButton,
+  Stack,
+  Tooltip,
+  useTheme,
+} from '@mui/material';
+import { ChangeLangDropdown } from '@components/dropdowns';
 import {
   DASHBOARD_LAYOUT_PADDING,
   MENUBAR_HEIGHT,
@@ -45,7 +54,29 @@ export function MenuBar() {
             <FormatIndentIncreaseIcon color="primary" />
           )}
         </IconButton>
-        <Typography>Hello</Typography>
+
+        <Stack
+          direction="row"
+          alignItems="center"
+          justifyContent="center"
+          gap={1}
+        >
+          <ChangeLangDropdown />
+
+          <Tooltip title="Notifications">
+            <IconButton>
+              <NotificationsIcon color="primary" />
+            </IconButton>
+          </Tooltip>
+
+          <Tooltip title="Profile">
+            <Avatar
+              sx={{ width: 40, height: 40 }}
+              alt="Remy Sharp"
+              src="https://media.proprofs.com/images/QM/user_images/2503852/-Type-Of-Person-.webp"
+            />
+          </Tooltip>
+        </Stack>
       </Stack>
     </>
   );

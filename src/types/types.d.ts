@@ -1,6 +1,11 @@
 export {};
 
 declare global {
+  export interface DataType {
+    value: string;
+    label: string;
+  }
+
   export type ModeType = 'dark' | 'light';
 
   export type LangType = 'en' | 'mm';
