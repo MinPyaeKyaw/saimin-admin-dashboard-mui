@@ -1,5 +1,6 @@
 import FormatIndentDecreaseIcon from '@mui/icons-material/FormatIndentDecrease';
 import FormatIndentIncreaseIcon from '@mui/icons-material/FormatIndentIncrease';
+import NotificationsIcon from '@mui/icons-material/Notifications';
 import {
   Avatar,
   Box,
@@ -8,7 +9,6 @@ import {
   Tooltip,
   useTheme,
 } from '@mui/material';
-import NotificationsIcon from '@mui/icons-material/Notifications';
 import { ChangeLangDropdown } from '@components/dropdowns';
 import {
   DASHBOARD_LAYOUT_PADDING,
@@ -21,6 +21,8 @@ import useUserPreferencesStore from '@stores/userPreferencesStore';
 export function MenuBar() {
   const theme = useTheme();
   const { sidebarOpen, toggleSidebar } = useUserPreferencesStore();
+
+  console.log(;)
 
   return (
     <>
