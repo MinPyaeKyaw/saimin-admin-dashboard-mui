@@ -1,3 +1,3 @@
 export function ProfileDropdown() {
-  return <h1>Leeplx</h1>;
+  return <h1>Profile dropdown</h1>;
 }
