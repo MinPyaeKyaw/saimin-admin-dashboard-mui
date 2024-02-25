@@ -22,8 +22,6 @@ export function MenuBar() {
   const theme = useTheme();
   const { sidebarOpen, toggleSidebar } = useUserPreferencesStore();
 
-  console.log(;)
-
   return (
     <>
       <Box

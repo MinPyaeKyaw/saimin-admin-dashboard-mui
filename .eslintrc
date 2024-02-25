@@ -20,6 +20,7 @@
     "project": "./tsconfig.json"
   },
   "plugins": ["react", "@typescript-eslint", "@tanstack/query"],
+  "ignorePatterns": ["vitest.config.ts"],
   "rules": {
     "no-nested-ternary": "off",
     // prettier

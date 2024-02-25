@@ -1,14 +1,7 @@
 /**
  * Customizable config of MUI Components
  */
-export const components = {
-  MuiAppBar: {
-    defaultProps: {
-      sx: {
-        boxShadow: 'none',
-      },
-    },
-  },
+export const components: any = {
   MuiButton: {
     defaultProps: {
       disableRipple: false,

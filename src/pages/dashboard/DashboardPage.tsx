@@ -21,6 +21,18 @@ export function DashboardPage() {
         change mode
       </Button>
 
+      <Button onClick={handleChangeMode} variant="contained">
+        change mode
+      </Button>
+
+      <Button onClick={handleChangeMode} variant="contained">
+        change mode
+      </Button>
+
+      <Button onClick={handleChangeMode} variant="contained">
+        change mode
+      </Button>
+
       <ChangeLangDropdown />
 
       <Typography variant="h1" component="h2">
