@@ -9,13 +9,14 @@ import {
   Tooltip,
   useTheme,
 } from '@mui/material';
+import { ChangeModeButton } from '@components/buttons';
 import { ChangeLangDropdown } from '@components/dropdowns';
+import { Logo } from '@components/logos';
 import {
   DASHBOARD_LAYOUT_PADDING,
   MENUBAR_HEIGHT,
   Z_INDEXES,
 } from '@configs/ui-consts';
-import { getSidebarWidth } from '@helpers/ui';
 import useUserPreferencesStore from '@stores/userPreferencesStore';
 
 export function MenuBar() {
@@ -37,7 +38,7 @@ export function MenuBar() {
         alignItems="center"
         px={DASHBOARD_LAYOUT_PADDING}
         sx={{
-          width: `calc(100% - ${getSidebarWidth(sidebarOpen)}px)`,
+          width: '100%',
           height: MENUBAR_HEIGHT,
           backdropFilter: 'blur(4px)',
           borderBottom: `1px solid ${theme.palette.divider}`,
@@ -47,13 +48,32 @@ export function MenuBar() {
           zIndex: Z_INDEXES.MENU_BAR,
         }}
       >
-        <IconButton onClick={() => toggleSidebar(!sidebarOpen)}>
-          {sidebarOpen ? (
-            <FormatIndentDecreaseIcon color="primary" />
-          ) : (
-            <FormatIndentIncreaseIcon color="primary" />
-          )}
-        </IconButton>
+        <Stack
+          direction="row"
+          alignItems="center"
+          justifyContent="center"
+          gap={1}
+        >
+          <IconButton onClick={() => toggleSidebar(!sidebarOpen)}>
+            {sidebarOpen ? (
+              <FormatIndentDecreaseIcon color="primary" />
+            ) : (
+              <FormatIndentIncreaseIcon color="primary" />
+            )}
+          </IconButton>
+
+          <Box
+            sx={{
+              height: MENUBAR_HEIGHT,
+              width: '100%',
+              display: 'flex',
+              alignItems: 'center',
+              boxSizing: 'border-box',
+            }}
+          >
+            <Logo h={MENUBAR_HEIGHT - 25} />
+          </Box>
+        </Stack>
 
         <Stack
           direction="row"
@@ -61,6 +81,8 @@ export function MenuBar() {
           justifyContent="center"
           gap={1}
         >
+          <ChangeModeButton />
+
           <ChangeLangDropdown />
 
           <Tooltip title="Notifications">

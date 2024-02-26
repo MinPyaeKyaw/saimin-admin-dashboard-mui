@@ -2,6 +2,7 @@ import { Button, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import useUserPreferencesStore from '@stores/userPreferencesStore';
 import { ChangeLangDropdown } from '@components/dropdowns';
+import { NotiDrawer } from '@components/drawers';
 
 export function DashboardPage() {
   const { t, i18n } = useTranslation();
@@ -17,6 +18,7 @@ export function DashboardPage() {
 
   return (
     <>
+      <NotiDrawer />
       <Button onClick={handleChangeMode} variant="contained">
         change mode
       </Button>

@@ -1,6 +1,8 @@
 import { Box, Typography, useTheme } from '@mui/material';
 import { getSidebarWidth } from '@helpers/ui';
 import useUserPreferencesStore from '@stores/userPreferencesStore';
+import { Logo } from '@components/logos';
+import { MENUBAR_HEIGHT } from '@configs/ui-consts';
 
 export function SideBar() {
   const theme = useTheme();
@@ -16,9 +18,10 @@ export function SideBar() {
         left: 0,
         borderRight: `1px solid ${theme.palette.divider}`,
         overflow: 'hidden',
+        paddingTop: `${MENUBAR_HEIGHT}px`,
       }}
     >
-      <Typography>Hello</Typography>
+      <div>HEllo</div>
     </Box>
   );
 }
