@@ -1,8 +1,8 @@
 import { Button, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import useUserPreferencesStore from '@stores/userPreferencesStore';
-import { ChangeLangDropdown } from '@components/dropdowns';
 import { NotiDrawer } from '@components/drawers';
+import { ChangeLangDropdown } from '@components/dropdowns';
+import useUserPreferencesStore from '@stores/userPreferencesStore';
 
 export function DashboardPage() {
   const { t, i18n } = useTranslation();

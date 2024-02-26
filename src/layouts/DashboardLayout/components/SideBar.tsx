@@ -1,8 +1,9 @@
-import { Box, Typography, useTheme } from '@mui/material';
+import { Box, Button, Stack, Typography, useTheme } from '@mui/material';
+import { MENUBAR_HEIGHT } from '@configs/ui-consts';
 import { getSidebarWidth } from '@helpers/ui';
 import useUserPreferencesStore from '@stores/userPreferencesStore';
-import { Logo } from '@components/logos';
-import { MENUBAR_HEIGHT } from '@configs/ui-consts';
+import { MENU_LIST } from '@configs/menu';
+import AcUnitIcon from '@mui/icons-material/AcUnit';
 
 export function SideBar() {
   const theme = useTheme();
@@ -21,7 +22,14 @@ export function SideBar() {
         paddingTop: `${MENUBAR_HEIGHT}px`,
       }}
     >
-      <div>HEllo</div>
+      {MENU_LIST.map((menu) => (
+        <Button key={menu.id} fullWidth>
+          <Stack direction="row" width="100%">
+            <AcUnitIcon />
+            <Typography ml={2}>{menu.name}</Typography>
+          </Stack>
+        </Button>
+      ))}
     </Box>
   );
 }
