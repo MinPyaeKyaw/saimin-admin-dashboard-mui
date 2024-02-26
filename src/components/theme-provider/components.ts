@@ -7,7 +7,7 @@ export const components: any = {
       disableRipple: false,
       size: 'large',
       sx: {
-        borderRadius: 2,
+        borderRadius: 1,
         boxShadow: 'none',
         '&:hover': {
           boxShadow: 'none',

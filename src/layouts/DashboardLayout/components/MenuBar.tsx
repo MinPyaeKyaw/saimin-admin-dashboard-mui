@@ -11,7 +11,7 @@ import {
 } from '@mui/material';
 import { ChangeModeButton } from '@components/buttons';
 import { ChangeLangDropdown } from '@components/dropdowns';
-import { Logo } from '@components/logos';
+// import { Logo } from '@components/logos';
 import {
   DASHBOARD_LAYOUT_PADDING,
   MENUBAR_HEIGHT,
@@ -62,7 +62,7 @@ export function MenuBar() {
             )}
           </IconButton>
 
-          <Box
+          {/* <Box
             sx={{
               height: MENUBAR_HEIGHT,
               width: '100%',
@@ -72,7 +72,7 @@ export function MenuBar() {
             }}
           >
             <Logo h={MENUBAR_HEIGHT - 25} />
-          </Box>
+          </Box> */}
         </Stack>
 
         <Stack
