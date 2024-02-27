@@ -4,7 +4,7 @@ import { MENUBAR_HEIGHT } from '@configs/ui-consts';
 import { getSidebarWidth } from '@helpers/ui';
 import useGetMenus from '@hooks/useGetMenus';
 import useUserPreferencesStore from '@stores/userPreferencesStore';
-import { MenuItem } from './MenuItem';
+import { SidebarItem } from './SidebarItem';
 
 export function SideBar() {
   const routerState = useRouterState();
@@ -28,7 +28,7 @@ export function SideBar() {
       <List>
         {menus.map((menu) => (
           <ListItem key={menu.id}>
-            <MenuItem
+            <SidebarItem
               active={routerState.location.pathname === menu.route}
               menu={menu}
             />

@@ -43,5 +43,43 @@ export default function useGetMenus() {
         />
       ),
     },
+    {
+      id: 3,
+      name: 'Nested',
+      route: '/albums',
+      icon: (
+        <CollectionsOutlinedIcon
+          sx={{
+            marginX: 1,
+          }}
+        />
+      ),
+      children: [
+        {
+          id: 1,
+          name: 'Child One',
+          route: '/albums',
+          icon: (
+            <CollectionsOutlinedIcon
+              sx={{
+                marginX: 1,
+              }}
+            />
+          ),
+        },
+        {
+          id: 2,
+          name: 'Child Two',
+          route: '/albums',
+          icon: (
+            <CollectionsOutlinedIcon
+              sx={{
+                marginX: 1,
+              }}
+            />
+          ),
+        },
+      ],
+    },
   ];
 }
