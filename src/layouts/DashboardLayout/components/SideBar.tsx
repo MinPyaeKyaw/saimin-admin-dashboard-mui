@@ -1,14 +1,14 @@
-import DashboardCustomizeOutlinedIcon from '@mui/icons-material/DashboardCustomizeOutlined';
-import { Box, Button, List, ListItem, useTheme } from '@mui/material';
-import { MENU_LIST } from '@configs/menu';
+import { Box, List, ListItem, useTheme } from '@mui/material';
 import { MENUBAR_HEIGHT } from '@configs/ui-consts';
 import { getSidebarWidth } from '@helpers/ui';
+import useGetMenus from '@hooks/useGetMenus';
 import useUserPreferencesStore from '@stores/userPreferencesStore';
 import { MenuItem } from './MenuItem';
 
 export function SideBar() {
   const theme = useTheme();
   const { sidebarOpen } = useUserPreferencesStore();
+  const menus = useGetMenus();
 
   return (
     <Box
@@ -24,23 +24,11 @@ export function SideBar() {
       }}
     >
       <List>
-        <ListItem>
-          <Button fullWidth size="large">
-            {MENU_LIST[0].name}
-          </Button>
-        </ListItem>
-
-        <ListItem>
-          <MenuItem
-            active
-            name={MENU_LIST[0].name}
-            icon={<DashboardCustomizeOutlinedIcon sx={{ marginX: 1.5 }} />}
-          />
-        </ListItem>
-
-        <ListItem>
-          <Button fullWidth>{MENU_LIST[2].name}</Button>
-        </ListItem>
+        {menus.map((menu) => (
+          <ListItem key={menu.id}>
+            <MenuItem active name={menu.name} icon={menu.icon} />
+          </ListItem>
+        ))}
       </List>
     </Box>
   );

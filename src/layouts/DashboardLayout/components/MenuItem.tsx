@@ -29,7 +29,7 @@ export function MenuItem({
         fontSize: 16,
         borderRadius: 1,
         '&:hover': {
-          background: theme.palette.grey[100],
+          background: theme.palette.action.hover,
         },
       }}
       {...props}
