@@ -1,5 +1,8 @@
 {
   "hello": "In English",
   "english": "English",
-  "myanmar": "Myanmar"
+  "myanmar": "Myanmar",
+  "dashboard": "Dashboard",
+  "products": "Products",
+  "albums": "Albums"
 }

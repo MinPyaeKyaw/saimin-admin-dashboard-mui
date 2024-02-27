@@ -11,7 +11,7 @@ const dashboardRoute = createRoute({
 
 const postsRoute = createRoute({
   getParentRoute: () => dashboardRoot,
-  path: '/posts',
+  path: '/products',
   component: () => <PostsPage />,
 });
 

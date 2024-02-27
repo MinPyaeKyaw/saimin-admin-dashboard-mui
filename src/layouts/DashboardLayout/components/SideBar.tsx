@@ -1,4 +1,5 @@
 import { Box, List, ListItem, useTheme } from '@mui/material';
+import { useRouterState } from '@tanstack/react-router';
 import { MENUBAR_HEIGHT } from '@configs/ui-consts';
 import { getSidebarWidth } from '@helpers/ui';
 import useGetMenus from '@hooks/useGetMenus';
@@ -6,6 +7,7 @@ import useUserPreferencesStore from '@stores/userPreferencesStore';
 import { MenuItem } from './MenuItem';
 
 export function SideBar() {
+  const routerState = useRouterState();
   const theme = useTheme();
   const { sidebarOpen } = useUserPreferencesStore();
   const menus = useGetMenus();
@@ -26,7 +28,10 @@ export function SideBar() {
       <List>
         {menus.map((menu) => (
           <ListItem key={menu.id}>
-            <MenuItem active name={menu.name} icon={menu.icon} />
+            <MenuItem
+              active={routerState.location.pathname === menu.route}
+              menu={menu}
+            />
           </ListItem>
         ))}
       </List>

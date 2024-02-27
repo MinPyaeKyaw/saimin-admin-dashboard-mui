@@ -1,12 +1,16 @@
 import CollectionsOutlinedIcon from '@mui/icons-material/CollectionsOutlined';
 import DashboardCustomizeOutlinedIcon from '@mui/icons-material/DashboardCustomizeOutlined';
 import ProductionQuantityLimitsOutlinedIcon from '@mui/icons-material/ProductionQuantityLimitsOutlined';
+import { useTranslation } from 'react-i18next';
 
 export default function useGetMenus() {
+  const { t } = useTranslation();
+
   return [
     {
       id: 1,
-      name: 'Dashboard',
+      name: t('dashboard'),
+      route: '/',
       icon: (
         <DashboardCustomizeOutlinedIcon
           sx={{
@@ -17,7 +21,8 @@ export default function useGetMenus() {
     },
     {
       id: 2,
-      name: 'Products',
+      name: t('products'),
+      route: '/products',
       icon: (
         <ProductionQuantityLimitsOutlinedIcon
           sx={{
@@ -28,7 +33,8 @@ export default function useGetMenus() {
     },
     {
       id: 3,
-      name: 'Albums',
+      name: t('albums'),
+      route: '/albums',
       icon: (
         <CollectionsOutlinedIcon
           sx={{
