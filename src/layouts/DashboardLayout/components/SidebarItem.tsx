@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import {
@@ -14,11 +14,13 @@ import { useNavigate, useRouterState } from '@tanstack/react-router';
 interface Props {
   active: boolean;
   menu: MenuType;
+  toggleMobileSibebar?: Dispatch<SetStateAction<boolean>>;
 }
 
 export function SidebarItem({
   active,
   menu,
+  toggleMobileSibebar,
   ...props
 }: Props & ButtonBaseProps) {
   const theme = useTheme();
@@ -31,6 +33,9 @@ export function SidebarItem({
     if (menu.children) {
       setOpenCollapse(!openCollapse);
     } else {
+      // * In mobile devices, need to close the mobile side bar drawer.
+      if (toggleMobileSibebar) toggleMobileSibebar(false);
+
       navigate({
         to: menu.route,
       });
@@ -38,6 +43,9 @@ export function SidebarItem({
   };
 
   const handleChildClick = (route: string): void => {
+    // * In mobile devices, need to close the mobile side bar drawer.
+    if (toggleMobileSibebar) toggleMobileSibebar(false);
+
     navigate({
       to: route,
     });

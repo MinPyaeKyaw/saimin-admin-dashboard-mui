@@ -103,6 +103,83 @@ export default function useGetMenus() {
         />
       ),
     },
+    {
+      name: t('dashboard'),
+      route: '/f',
+      icon: (
+        <DashboardCustomizeOutlinedIcon
+          sx={{
+            marginX: 1,
+          }}
+        />
+      ),
+    },
+    {
+      name: t('dashboard'),
+      route: '/a',
+      icon: (
+        <DashboardCustomizeOutlinedIcon
+          sx={{
+            marginX: 1,
+          }}
+        />
+      ),
+    },
+    {
+      name: t('dashboard'),
+      route: '/d',
+      icon: (
+        <DashboardCustomizeOutlinedIcon
+          sx={{
+            marginX: 1,
+          }}
+        />
+      ),
+    },
+    {
+      name: t('dashboard'),
+      route: '/i',
+      icon: (
+        <DashboardCustomizeOutlinedIcon
+          sx={{
+            marginX: 1,
+          }}
+        />
+      ),
+    },
+    {
+      name: t('dashboard'),
+      route: '/m',
+      icon: (
+        <DashboardCustomizeOutlinedIcon
+          sx={{
+            marginX: 1,
+          }}
+        />
+      ),
+    },
+    {
+      name: t('dashboard'),
+      route: '/u',
+      icon: (
+        <DashboardCustomizeOutlinedIcon
+          sx={{
+            marginX: 1,
+          }}
+        />
+      ),
+    },
+    {
+      name: t('dashboard'),
+      route: '/o',
+      icon: (
+        <DashboardCustomizeOutlinedIcon
+          sx={{
+            marginX: 1,
+          }}
+        />
+      ),
+    },
   ];
 
   const profileMenus = [

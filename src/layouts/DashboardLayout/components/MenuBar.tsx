@@ -1,6 +1,7 @@
+import { Dispatch, SetStateAction } from 'react';
 import FormatIndentDecreaseIcon from '@mui/icons-material/FormatIndentDecrease';
 import FormatIndentIncreaseIcon from '@mui/icons-material/FormatIndentIncrease';
-import { Box, IconButton, Stack, useTheme } from '@mui/material';
+import { Box, IconButton, Stack, useMediaQuery, useTheme } from '@mui/material';
 import { ChangeModeButton } from '@components/buttons';
 import {
   ChangeLangDropdown,
@@ -11,12 +12,18 @@ import {
 import {
   DASHBOARD_LAYOUT_PADDING,
   MENUBAR_HEIGHT,
+  MOBILE_MEDIA_QUERY,
   Z_INDEXES,
 } from '@configs/ui-consts';
 import useUserPreferencesStore from '@stores/userPreferencesStore';
 
-export function MenuBar() {
+interface Props {
+  toggleMobileSibebar: Dispatch<SetStateAction<boolean>>;
+}
+
+export function MenuBar({ toggleMobileSibebar }: Props) {
   const theme = useTheme();
+  const matches = useMediaQuery(MOBILE_MEDIA_QUERY);
   const { sidebarOpen, toggleSidebar } = useUserPreferencesStore();
 
   const user = {
@@ -24,6 +31,14 @@ export function MenuBar() {
     position: 'Web Developer',
     profileImg:
       'https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg',
+  };
+
+  const handleTogglingSidebar = () => {
+    if (matches) {
+      toggleSidebar(!sidebarOpen);
+    } else {
+      toggleMobileSibebar((prev) => !prev);
+    }
   };
 
   return (
@@ -58,7 +73,7 @@ export function MenuBar() {
           justifyContent="center"
           gap={1}
         >
-          <IconButton onClick={() => toggleSidebar(!sidebarOpen)}>
+          <IconButton onClick={handleTogglingSidebar}>
             {sidebarOpen ? (
               <FormatIndentDecreaseIcon color="primary" />
             ) : (
