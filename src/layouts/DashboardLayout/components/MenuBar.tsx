@@ -1,6 +1,5 @@
 import FormatIndentDecreaseIcon from '@mui/icons-material/FormatIndentDecrease';
 import FormatIndentIncreaseIcon from '@mui/icons-material/FormatIndentIncrease';
-import NotificationsIcon from '@mui/icons-material/Notifications';
 import {
   Avatar,
   Box,

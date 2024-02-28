@@ -11,7 +11,6 @@ import {
   ListItemAvatar,
   ListItemText,
   Divider,
-  Stack,
 } from '@mui/material';
 import Popover from '@mui/material/Popover';
 import Typography from '@mui/material/Typography';
