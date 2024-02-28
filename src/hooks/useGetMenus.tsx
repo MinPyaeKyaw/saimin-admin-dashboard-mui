@@ -1,14 +1,19 @@
+import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import CollectionsOutlinedIcon from '@mui/icons-material/CollectionsOutlined';
+import CreditCardOutlinedIcon from '@mui/icons-material/CreditCardOutlined';
 import DashboardCustomizeOutlinedIcon from '@mui/icons-material/DashboardCustomizeOutlined';
+import ManageHistoryOutlinedIcon from '@mui/icons-material/ManageHistoryOutlined';
 import ProductionQuantityLimitsOutlinedIcon from '@mui/icons-material/ProductionQuantityLimitsOutlined';
+import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
+import { useTheme } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 
 export default function useGetMenus() {
   const { t } = useTranslation();
+  const theme = useTheme();
 
-  return [
+  const menus = [
     {
-      id: 1,
       name: t('dashboard'),
       route: '/',
       icon: (
@@ -20,7 +25,6 @@ export default function useGetMenus() {
       ),
     },
     {
-      id: 2,
       name: t('products'),
       route: '/products',
       icon: (
@@ -32,7 +36,6 @@ export default function useGetMenus() {
       ),
     },
     {
-      id: 3,
       name: t('albums'),
       route: '/albums',
       icon: (
@@ -44,7 +47,6 @@ export default function useGetMenus() {
       ),
     },
     {
-      id: 3,
       name: 'Nested',
       route: '/nested',
       icon: (
@@ -56,7 +58,6 @@ export default function useGetMenus() {
       ),
       children: [
         {
-          id: 1,
           name: 'Child One',
           route: '/child-one',
           icon: (
@@ -68,7 +69,6 @@ export default function useGetMenus() {
           ),
         },
         {
-          id: 2,
           name: 'Child Two',
           route: '/child-two',
           icon: (
@@ -82,7 +82,6 @@ export default function useGetMenus() {
       ],
     },
     {
-      id: 9,
       name: 'test',
       route: '/test',
       icon: (
@@ -94,7 +93,6 @@ export default function useGetMenus() {
       ),
     },
     {
-      id: 10,
       name: 'New One',
       route: '/new-one',
       icon: (
@@ -106,4 +104,57 @@ export default function useGetMenus() {
       ),
     },
   ];
+
+  const profileMenus = [
+    {
+      name: 'View Profile',
+      route: '/profile',
+      icon: (
+        <AccountCircleOutlinedIcon
+          sx={{
+            color: theme.palette.primary.main,
+            marginRight: 2,
+          }}
+        />
+      ),
+    },
+    {
+      name: 'Billing',
+      route: '/billings',
+      icon: (
+        <CreditCardOutlinedIcon
+          sx={{
+            color: theme.palette.primary.main,
+            marginRight: 2,
+          }}
+        />
+      ),
+    },
+    {
+      name: 'History',
+      route: '/history',
+      icon: (
+        <ManageHistoryOutlinedIcon
+          sx={{
+            color: theme.palette.primary.main,
+            marginRight: 2,
+          }}
+        />
+      ),
+    },
+    {
+      name: 'Settings',
+      route: '/settings',
+      icon: (
+        <SettingsOutlinedIcon
+          sx={{
+            color: theme.palette.primary.main,
+            marginRight: 2,
+          }}
+        />
+      ),
+    },
+  ];
+
+  return { menus, profileMenus };
 }

@@ -10,7 +10,7 @@ export function SideBar() {
   const routerState = useRouterState();
   const theme = useTheme();
   const { sidebarOpen } = useUserPreferencesStore();
-  const menus = useGetMenus();
+  const { menus } = useGetMenus();
 
   return (
     <Box
@@ -27,7 +27,7 @@ export function SideBar() {
     >
       <List>
         {menus.map((menu) => (
-          <ListItem key={menu.id}>
+          <ListItem key={menu.route}>
             <SidebarItem
               active={routerState.location.pathname === menu.route}
               menu={menu}

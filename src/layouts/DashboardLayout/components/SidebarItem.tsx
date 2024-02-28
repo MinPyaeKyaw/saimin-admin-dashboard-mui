@@ -112,7 +112,7 @@ export function SidebarItem({
           <Stack gap={1} marginTop={1}>
             {menu.children.map((child) => (
               <ButtonBase
-                key={child.id}
+                key={child.route}
                 onClick={() => handleChildClick(child.route)}
                 sx={{
                   width: '100%',

@@ -1,5 +1,5 @@
-import DarkModeIcon from '@mui/icons-material/DarkMode';
-import LightModeIcon from '@mui/icons-material/LightMode';
+import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
+import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
 import { Tooltip, IconButton } from '@mui/material';
 import useUserPreferencesStore from '@stores/userPreferencesStore';
 
@@ -12,9 +12,9 @@ export function ChangeModeButton() {
         onClick={() => changeMode(mode === 'light' ? 'dark' : 'light')}
       >
         {mode === 'light' ? (
-          <DarkModeIcon color="primary" />
+          <DarkModeOutlinedIcon color="primary" />
         ) : (
-          <LightModeIcon color="primary" />
+          <LightModeOutlinedIcon color="primary" />
         )}
       </IconButton>
     </Tooltip>

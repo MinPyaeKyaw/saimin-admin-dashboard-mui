@@ -1,15 +1,12 @@
 import FormatIndentDecreaseIcon from '@mui/icons-material/FormatIndentDecrease';
 import FormatIndentIncreaseIcon from '@mui/icons-material/FormatIndentIncrease';
-import {
-  Avatar,
-  Box,
-  IconButton,
-  Stack,
-  Tooltip,
-  useTheme,
-} from '@mui/material';
+import { Box, IconButton, Stack, useTheme } from '@mui/material';
 import { ChangeModeButton } from '@components/buttons';
-import { ChangeLangDropdown, NotiDropdown } from '@components/dropdowns';
+import {
+  ChangeLangDropdown,
+  NotiDropdown,
+  ProfileDropdown,
+} from '@components/dropdowns';
 // import { Logo } from '@components/logos';
 import {
   DASHBOARD_LAYOUT_PADDING,
@@ -21,6 +18,13 @@ import useUserPreferencesStore from '@stores/userPreferencesStore';
 export function MenuBar() {
   const theme = useTheme();
   const { sidebarOpen, toggleSidebar } = useUserPreferencesStore();
+
+  const user = {
+    username: 'Sai Min',
+    position: 'Web Developer',
+    profileImg:
+      'https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg',
+  };
 
   return (
     <>
@@ -61,18 +65,6 @@ export function MenuBar() {
               <FormatIndentIncreaseIcon color="primary" />
             )}
           </IconButton>
-
-          {/* <Box
-            sx={{
-              height: MENUBAR_HEIGHT,
-              width: '100%',
-              display: 'flex',
-              alignItems: 'center',
-              boxSizing: 'border-box',
-            }}
-          >
-            <Logo h={MENUBAR_HEIGHT - 25} />
-          </Box> */}
         </Stack>
 
         <Stack
@@ -87,13 +79,7 @@ export function MenuBar() {
 
           <NotiDropdown />
 
-          <Tooltip title="Profile">
-            <Avatar
-              sx={{ width: 40, height: 40 }}
-              alt="Remy Sharp"
-              src="https://media.proprofs.com/images/QM/user_images/2503852/-Type-Of-Person-.webp"
-            />
-          </Tooltip>
+          <ProfileDropdown user={user} />
         </Stack>
       </Stack>
     </>

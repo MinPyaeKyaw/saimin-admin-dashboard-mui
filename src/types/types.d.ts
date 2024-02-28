@@ -2,7 +2,6 @@ export {};
 
 declare global {
   export interface MenuType {
-    id: number;
     name: string;
     icon: ReactNode;
     route: string;

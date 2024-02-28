@@ -40,7 +40,7 @@ export function ChangeLangDropdown() {
   };
 
   return (
-    <div>
+    <>
       <Tooltip title="Change Language">
         <IconButton aria-describedby={id} onClick={handleClick}>
           <LanguageIcon color="primary" />
@@ -66,6 +66,6 @@ export function ChangeLangDropdown() {
           ))}
         </List>
       </Popover>
-    </div>
+    </>
   );
 }

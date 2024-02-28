@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import ImageIcon from '@mui/icons-material/Image';
-import NotificationsIcon from '@mui/icons-material/Notifications';
+import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
 import {
   Tooltip,
   IconButton,
@@ -30,11 +30,38 @@ export function NotiDropdown() {
     setAnchorEl(null);
   };
 
+  const mockData = [
+    {
+      id: 1,
+      title: 'Notification One',
+      description: 'This is the description of nofitication one',
+      icon: <ImageIcon />,
+    },
+    {
+      id: 2,
+      title: 'Notification Two',
+      description: 'This is the description of nofitication two',
+      icon: <ImageIcon />,
+    },
+    {
+      id: 3,
+      title: 'Notification Three',
+      description: 'This is the description of nofitication three',
+      icon: <ImageIcon />,
+    },
+    {
+      id: 4,
+      title: 'Notification Four',
+      description: 'This is the description of nofitication four',
+      icon: <ImageIcon />,
+    },
+  ];
+
   return (
-    <div>
+    <>
       <Tooltip title="Notifications">
         <IconButton aria-describedby={id} onClick={handleClick}>
-          <NotificationsIcon color="primary" />
+          <NotificationsOutlinedIcon color="primary" />
         </IconButton>
       </Tooltip>
 
@@ -63,50 +90,19 @@ export function NotiDropdown() {
           {/*
            * Beginning of Limitted Notification List
            */}
-
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemAvatar>
-                <Avatar>
-                  <ImageIcon />
-                </Avatar>
-              </ListItemAvatar>
-              <ListItemText primary="Photos" secondary="Jan 9, 2014" />
-            </ListItemButton>
-          </ListItem>
-
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemAvatar>
-                <Avatar>
-                  <ImageIcon />
-                </Avatar>
-              </ListItemAvatar>
-              <ListItemText primary="Photos" secondary="Jan 9, 2014" />
-            </ListItemButton>
-          </ListItem>
-
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemAvatar>
-                <Avatar>
-                  <ImageIcon />
-                </Avatar>
-              </ListItemAvatar>
-              <ListItemText primary="Photos" secondary="Jan 9, 2014" />
-            </ListItemButton>
-          </ListItem>
-
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemAvatar>
-                <Avatar>
-                  <ImageIcon />
-                </Avatar>
-              </ListItemAvatar>
-              <ListItemText primary="Photos" secondary="Jan 9, 2014" />
-            </ListItemButton>
-          </ListItem>
+          {mockData.map((noti) => (
+            <ListItem key={noti.id} disablePadding>
+              <ListItemButton>
+                <ListItemAvatar>
+                  <Avatar>{noti.icon}</Avatar>
+                </ListItemAvatar>
+                <ListItemText
+                  primary={noti.title}
+                  secondary={noti.description}
+                />
+              </ListItemButton>
+            </ListItem>
+          ))}
 
           {/*
            * End of Limitted Notification List
@@ -128,6 +124,6 @@ export function NotiDropdown() {
           </ListItem>
         </List>
       </Popover>
-    </div>
+    </>
   );
 }
