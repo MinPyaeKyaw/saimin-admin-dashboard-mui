@@ -46,6 +46,7 @@ export function MenuBar() {
           top: 0,
           right: 0,
           zIndex: Z_INDEXES.MENU_BAR,
+          paddingX: 2,
         }}
       >
         <Stack

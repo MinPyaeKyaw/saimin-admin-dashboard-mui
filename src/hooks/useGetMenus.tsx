@@ -46,7 +46,7 @@ export default function useGetMenus() {
     {
       id: 3,
       name: 'Nested',
-      route: '/albums',
+      route: '/nested',
       icon: (
         <CollectionsOutlinedIcon
           sx={{
@@ -58,7 +58,7 @@ export default function useGetMenus() {
         {
           id: 1,
           name: 'Child One',
-          route: '/albums',
+          route: '/child-one',
           icon: (
             <CollectionsOutlinedIcon
               sx={{
@@ -70,7 +70,7 @@ export default function useGetMenus() {
         {
           id: 2,
           name: 'Child Two',
-          route: '/albums',
+          route: '/child-two',
           icon: (
             <CollectionsOutlinedIcon
               sx={{
@@ -80,6 +80,18 @@ export default function useGetMenus() {
           ),
         },
       ],
+    },
+    {
+      id: 9,
+      name: 'test',
+      route: '/test',
+      icon: (
+        <CollectionsOutlinedIcon
+          sx={{
+            marginX: 1,
+          }}
+        />
+      ),
     },
   ];
 }
