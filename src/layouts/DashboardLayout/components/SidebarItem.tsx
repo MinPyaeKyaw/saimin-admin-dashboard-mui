@@ -106,7 +106,7 @@ export function SidebarItem({
         </Stack>
       </ButtonBase>
 
-      {/* Child Sidebar Items */}
+      {/* Mapping Out Child Sidebar Items If It has */}
       {menu.children && (
         <Collapse in={openCollapse}>
           <Stack gap={1} marginTop={1}>

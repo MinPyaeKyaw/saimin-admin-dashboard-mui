@@ -10,7 +10,7 @@ import {
   useTheme,
 } from '@mui/material';
 import { ChangeModeButton } from '@components/buttons';
-import { ChangeLangDropdown } from '@components/dropdowns';
+import { ChangeLangDropdown, NotiDropdown } from '@components/dropdowns';
 // import { Logo } from '@components/logos';
 import {
   DASHBOARD_LAYOUT_PADDING,
@@ -86,11 +86,7 @@ export function MenuBar() {
 
           <ChangeLangDropdown />
 
-          <Tooltip title="Notifications">
-            <IconButton>
-              <NotificationsIcon color="primary" />
-            </IconButton>
-          </Tooltip>
+          <NotiDropdown />
 
           <Tooltip title="Profile">
             <Avatar

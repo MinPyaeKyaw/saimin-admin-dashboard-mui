@@ -93,5 +93,17 @@ export default function useGetMenus() {
         />
       ),
     },
+    {
+      id: 10,
+      name: 'New One',
+      route: '/new-one',
+      icon: (
+        <CollectionsOutlinedIcon
+          sx={{
+            marginX: 1,
+          }}
+        />
+      ),
+    },
   ];
 }
