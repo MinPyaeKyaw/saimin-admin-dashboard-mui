@@ -1,2 +1,3 @@
 export * from './dashboard/DashboardPage';
-export * from './posts/PostsPage';
+export * from './products/ProductsPage';
+export * from './products/CreatePage';

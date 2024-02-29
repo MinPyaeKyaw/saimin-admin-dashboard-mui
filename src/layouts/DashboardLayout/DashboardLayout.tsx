@@ -1,16 +1,19 @@
 import { useState } from 'react';
-import { Box, Stack, useMediaQuery } from '@mui/material';
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import { Box, Breadcrumbs, Stack, useMediaQuery } from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline';
 import { Outlet } from '@tanstack/react-router';
 import { MOBILE_MEDIA_QUERY } from '@configs/ui-consts';
 import { getSidebarWidth } from '@helpers/ui';
+import useGetBreadcrumbs from '@hooks/useGetBreadcrumbs';
 import useUserPreferencesStore from '@stores/userPreferencesStore';
 import { MenuBar, SideBar } from './components';
 import { MobileSideBarDrawer } from './components/MobileSideBarDrawer';
 
 export function DashboardLayout() {
-  const { sidebarOpen } = useUserPreferencesStore();
+  const breadcrumbs = useGetBreadcrumbs();
   const matches = useMediaQuery(MOBILE_MEDIA_QUERY);
+  const { sidebarOpen } = useUserPreferencesStore();
 
   const [toggleMobileSidebarDrawer, setToggleMobileSidebarDrawer] =
     useState<boolean>(false);
@@ -38,6 +41,13 @@ export function DashboardLayout() {
               padding: 2,
             }}
           >
+            <Breadcrumbs
+              separator={<NavigateNextIcon fontSize="small" />}
+              aria-label="breadcrumb"
+            >
+              {breadcrumbs}
+            </Breadcrumbs>
+
             <Outlet />
           </Box>
         </Box>
