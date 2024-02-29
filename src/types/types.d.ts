@@ -3,8 +3,8 @@ export {};
 declare global {
   export interface MenuType {
     name: string;
-    icon: ReactNode;
     route: string;
+    icon: JSX.Element;
     children?: MenuType[];
   }
   export interface DataType {

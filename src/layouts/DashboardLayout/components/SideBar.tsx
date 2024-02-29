@@ -8,7 +8,7 @@ import {
   SIDEBAR_WIDTH,
 } from '@configs/ui-consts';
 import { getSidebarWidth } from '@helpers/ui';
-import useGetMenus from '@hooks/useGetMenus';
+import useGetMenus from '@hooks/useMenus';
 import useUserPreferencesStore from '@stores/userPreferencesStore';
 import { SidebarItem } from './SidebarItem';
 

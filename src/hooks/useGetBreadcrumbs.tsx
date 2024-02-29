@@ -12,11 +12,12 @@ export default function useGetBreadcrumbs() {
     const pathJourney = routerState.location.pathname
       .replace('/', '')
       .split('/');
+
     const breadcrumbList = pathJourney.map((breadcrumb, i) => {
       // * If it is the last route.
       if (i === pathJourney.length - 1) {
         return (
-          <Typography key={breadcrumb} color="primary">
+          <Typography key={breadcrumb} color={i === 0 ? 'inherit' : 'primary'}>
             {breadcrumb}
           </Typography>
         );

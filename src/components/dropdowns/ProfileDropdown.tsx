@@ -16,7 +16,7 @@ import {
 import Popover from '@mui/material/Popover';
 import Typography from '@mui/material/Typography';
 import { useNavigate } from '@tanstack/react-router';
-import useGetMenus from '@hooks/useGetMenus';
+import useGetMenus from '@hooks/useMenus';
 
 interface Props {
   user: {

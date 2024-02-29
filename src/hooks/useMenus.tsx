@@ -8,11 +8,11 @@ import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import { useTheme } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 
-export default function useGetMenus() {
+export default function useMenus() {
   const { t } = useTranslation();
   const theme = useTheme();
 
-  const menus = [
+  const menus: MenuType[] = [
     {
       name: t('dashboard'),
       route: '/',

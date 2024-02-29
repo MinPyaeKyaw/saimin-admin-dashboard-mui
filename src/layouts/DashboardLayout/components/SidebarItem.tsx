@@ -61,6 +61,15 @@ export function SidebarItem({
     return false;
   };
 
+  const isActive = (): boolean => {
+    const activeParentRoute = routerState.location.pathname.split('/')[1];
+
+    if (`/${activeParentRoute}` === menu.route || hasActiveChild()) {
+      return true;
+    }
+    return false;
+  };
+
   return (
     <Stack width="100%">
       <ButtonBase
@@ -74,20 +83,17 @@ export function SidebarItem({
            * * Only when it is active or has active child,
            * * Set the text and icon colors white.
            */
-          color:
-            active || hasActiveChild() ? 'white' : theme.palette.text.primary,
+          color: isActive() ? 'white' : theme.palette.text.primary,
           /**
            * * Only when it is active or has active child,
            * * Set the background color primary.
            */
-          ...(active || hasActiveChild()
-            ? { background: theme.palette.primary.main }
-            : {}),
+          ...(isActive() ? { background: theme.palette.primary.main } : {}),
           /**
            * * Only when it is not active or has no active child,
            * * Apply the hover effect.
            */
-          ...(!active && !hasActiveChild()
+          ...(!isActive()
             ? {
                 '&:hover': {
                   background: theme.palette.action.hover,
