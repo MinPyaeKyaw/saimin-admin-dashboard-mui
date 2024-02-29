@@ -1,8 +1,9 @@
 import { ReactNode, useMemo, useState } from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, useTheme } from '@mui/material';
 import { useRouterState, useNavigate } from '@tanstack/react-router';
 
 export default function useGetBreadcrumbs() {
+  const theme = useTheme();
   const routerState = useRouterState();
   const navigate = useNavigate();
 
@@ -27,6 +28,12 @@ export default function useGetBreadcrumbs() {
         <Box
           key={breadcrumb}
           onClick={() => navigate({ to: `/${breadcrumb}` })}
+          sx={{
+            cursor: 'pointer',
+            '&:hover': {
+              color: theme.palette.primary.main,
+            },
+          }}
         >
           <Typography>{breadcrumb}</Typography>
         </Box>
@@ -34,7 +41,8 @@ export default function useGetBreadcrumbs() {
     });
 
     setBreadcrumbs(breadcrumbList);
-  }, [navigate, routerState.location.pathname]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [routerState]);
 
   return breadcrumbs;
 }
