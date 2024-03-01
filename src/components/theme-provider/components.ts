@@ -5,14 +5,21 @@ export const components: any = {
   MuiButton: {
     defaultProps: {
       disableRipple: false,
-      size: 'large',
+      size: 'medium',
+      variant: 'contained',
       sx: {
+        color: 'white',
         borderRadius: 1,
         boxShadow: 'none',
         '&:hover': {
           boxShadow: 'none',
         },
       },
+    },
+  },
+  MuiTextField: {
+    defaultProps: {
+      size: 'small',
     },
   },
   MuiPaper: {
