@@ -1,24 +1,27 @@
-import { Button, Paper, TextField, Typography } from '@mui/material';
+import { Button, Paper, Typography } from '@mui/material';
 import { Stack } from '@mui/system';
 import { useForm } from '@tanstack/react-form';
-import { TextLink } from '@components/common/TextLink';
-// import { TextInput } from '@components/inputs';
+import { useTranslation } from 'react-i18next';
+import { TextLink } from '@components/common';
+import { PasswordInput, TextInput } from '@components/inputs';
 
 export function LoginPage() {
+  const { t } = useTranslation();
+
   const { Provider, handleSubmit } = useForm({
     defaultValues: {
-      fullName: '',
+      email: '',
+      password: '',
     },
     // onSubmit: async ({ value }) => {
-    //   // Do something with form data
-    //   //   console.log(value);
+    //   console.log(value);
     // },
   });
 
   return (
     <Stack
       width="100%"
-      height="100vh"
+      height="100%"
       alignItems="center"
       justifyContent="center"
     >
@@ -28,7 +31,8 @@ export function LoginPage() {
           width: {
             xs: '95%',
             sm: '90%',
-            md: '30%',
+            md: '40%',
+            lg: '30%',
           },
         }}
       >
@@ -42,31 +46,31 @@ export function LoginPage() {
           >
             <Stack width="100%" gap={3}>
               <Typography variant="h2" textAlign="center">
-                Welcome Back!
+                {t('welcomeback')}
               </Typography>
 
               <Typography color="gray" textAlign="center" variant="body2">
-                Please Log in to continue
+                {t('pleaselogin')}
               </Typography>
 
-              {/* <TextInput name="email" /> */}
+              <TextInput name="email" label={t('email')} />
 
-              <TextField fullWidth label="Email" variant="outlined" />
-
-              <TextField fullWidth label="Password" variant="outlined" />
+              <PasswordInput name="password" label={t('password')} />
 
               <Stack alignItems="flex-end" gap={1}>
                 <TextLink
-                  text="Forgot password?"
+                  text={t('forgotPassword')}
                   to="/auth/forgot-password"
                   variant="body2"
                   color="gray"
                 />
-                <Button fullWidth>Login</Button>
+                <Button type="submit" fullWidth>
+                  {t('login')}
+                </Button>
               </Stack>
 
               <TextLink
-                text="Already have an account?"
+                text={t('alreadyHaveAcc')}
                 to="/auth/sign-up"
                 variant="body2"
                 color="gray"

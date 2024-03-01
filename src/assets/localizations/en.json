@@ -4,5 +4,12 @@
   "myanmar": "Myanmar",
   "dashboard": "Dashboard",
   "products": "Products",
-  "albums": "Albums"
+  "albums": "Albums",
+  "welcomeback": "Welcome Back!",
+  "pleaselogin": "Please log in to continue",
+  "login": "Log in",
+  "forgotPassword": "Forgot password?",
+  "alreadyHaveAcc": "Already have an account?",
+  "email": "Email",
+  "password": "Password"
 }

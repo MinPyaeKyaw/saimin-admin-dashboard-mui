@@ -47,7 +47,7 @@ const loginRoute = createRoute({
 
 const forgetPasswordRoute = createRoute({
   getParentRoute: () => authParentRoute,
-  path: '/forget-password',
+  path: '/forgot-password',
   component: () => <ForgetPasswordPage />,
 });
 
