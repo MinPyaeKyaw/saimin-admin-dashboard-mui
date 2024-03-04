@@ -1,5 +1,5 @@
 import { DummyJsonApi } from '@api/instances';
 
-export function getAllProducts() {
-  return DummyJsonApi.get('/products');
+export function getAllProducts(params: PaginationParams) {
+  return DummyJsonApi.get('/products', { params });
 }

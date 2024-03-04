@@ -5,7 +5,7 @@ import {
   createRootRoute,
 } from '@tanstack/react-router';
 import { Error404 } from '@components/pages';
-import { redirectToLoginPage } from '@helpers/auth';
+// import { redirectToLoginPage } from '@helpers/auth';
 import { AuthLayout, DashboardLayout } from '@layouts/index';
 import {
   DashboardPage,
@@ -64,7 +64,7 @@ const dashboardRoute = createRoute({
   getParentRoute: () => dashboardParentRoute,
   path: '/',
   component: () => <DashboardPage />,
-  beforeLoad: redirectToLoginPage,
+  // beforeLoad: redirectToLoginPage,
 });
 
 /**
@@ -74,14 +74,14 @@ const productRoute = createRoute({
   getParentRoute: () => dashboardParentRoute,
   path: '/products',
   component: () => <PostsPage />,
-  beforeLoad: redirectToLoginPage,
+  // beforeLoad: redirectToLoginPage,
 });
 
 const createPorductRoute = createRoute({
   getParentRoute: () => productRoute,
   path: '/create',
   component: () => <ProductCreate />,
-  beforeLoad: redirectToLoginPage,
+  // beforeLoad: redirectToLoginPage,
 });
 
 /**

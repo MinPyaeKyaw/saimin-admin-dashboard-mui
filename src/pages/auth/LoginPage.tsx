@@ -11,7 +11,7 @@ import { loginSchema } from '@helpers/schemas';
 export function LoginPage() {
   const { t } = useTranslation();
 
-  const { Provider, handleSubmit, state } = useForm({
+  const { Provider, handleSubmit } = useForm({
     defaultValues: {
       email: '',
       password: '',
@@ -20,12 +20,12 @@ export function LoginPage() {
     validators: {
       onSubmit: loginSchema,
     },
-    onSubmit: async ({ value }) => {
-      console.log('submit', value);
-    },
+    // onSubmit: async ({ value }) => {
+    //   console.log('submit', value);
+    // },
   });
 
-  console.log('values', state);
+  // console.log('values', state);
 
   return (
     <Stack
