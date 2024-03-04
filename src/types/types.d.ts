@@ -7,6 +7,11 @@ declare global {
     icon: JSX.Element;
     children?: MenuType[];
   }
+
+  export interface PaginationParams {
+    pageSize: 5;
+    page: 0;
+  }
   export interface DataType {
     value: string;
     label: string;
