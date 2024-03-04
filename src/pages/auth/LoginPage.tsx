@@ -1,22 +1,31 @@
 import { Button, Paper, Typography } from '@mui/material';
 import { Stack } from '@mui/system';
 import { useForm } from '@tanstack/react-form';
+import { zodValidator } from '@tanstack/zod-form-adapter';
 import { useTranslation } from 'react-i18next';
 import { TextLink } from '@components/common';
 import { PasswordInput, TextInput } from '@components/inputs';
+import { loginSchema } from '@helpers/schemas';
+// import useFormError from '@hooks/useFormError';
 
 export function LoginPage() {
   const { t } = useTranslation();
 
-  const { Provider, handleSubmit } = useForm({
+  const { Provider, handleSubmit, state } = useForm({
     defaultValues: {
       email: '',
       password: '',
     },
-    // onSubmit: async ({ value }) => {
-    //   console.log(value);
-    // },
+    validatorAdapter: zodValidator,
+    validators: {
+      onSubmit: loginSchema,
+    },
+    onSubmit: async ({ value }) => {
+      console.log('submit', value);
+    },
   });
+
+  console.log('values', state);
 
   return (
     <Stack
