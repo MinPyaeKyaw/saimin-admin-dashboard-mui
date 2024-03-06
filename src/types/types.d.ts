@@ -1,6 +1,24 @@
 export {};
 
 declare global {
+  export interface BarChartDataType {
+    color: string;
+    id: string;
+    label: string;
+    data: {
+      xLabel: string;
+      value: number;
+    }[];
+  }
+  export interface LineChartDataType {
+    color: string;
+    id: string;
+    label: string;
+    data: {
+      xLabel: string;
+      value: number;
+    }[];
+  }
   export interface MenuType {
     name: string;
     route: string;
