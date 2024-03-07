@@ -32,6 +32,8 @@ export function SideBar({ toggleMobileSibebar }: Props) {
         width: !matches ? SIDEBAR_WIDTH : getSidebarWidth(sidebarOpen),
         height: `calc(100vh - ${MENUBAR_HEIGHT}px)`,
         borderRight: `1px solid ${theme.palette.divider}`,
+        position: 'fixed',
+        left: 0,
         overflowX: 'hidden',
         overflowY: 'scroll',
         marginTop: `${MENUBAR_HEIGHT}px`,

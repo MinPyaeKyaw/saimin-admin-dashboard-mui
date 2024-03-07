@@ -1,10 +1,10 @@
-import { Grid, Paper, useTheme } from '@mui/material';
+import { Grid, Paper, Typography, useTheme } from '@mui/material';
 import {
   SaiMinBarChart,
   SaiMinLineChart,
   SaiMinPieChart,
 } from '@components/charts';
-import { Message } from './components';
+import { Calendar, Message } from './components';
 
 export function DashboardPage() {
   const theme = useTheme();
@@ -85,15 +85,17 @@ export function DashboardPage() {
   return (
     <Grid container spacing={2}>
       <Grid item xs={8}>
-        <Paper sx={{ padding: 1 }}>
-          <Message />
-        </Paper>
+        <Message />
       </Grid>
 
       <Grid item xs={4}>
-        <Paper sx={{ padding: 1 }}>
-          <Message />
+        <Paper>
+          <Calendar />
         </Paper>
+      </Grid>
+
+      <Grid item xs={12}>
+        <Typography>Charts</Typography>
       </Grid>
 
       <Grid item xs={12} md={6}>
