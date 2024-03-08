@@ -3,8 +3,8 @@ import { Stack } from '@mui/system';
 import { useForm } from '@tanstack/react-form';
 import { zodValidator } from '@tanstack/zod-form-adapter';
 import { useTranslation } from 'react-i18next';
-import { TextLink } from '@components/common';
 import { PasswordInput, TextInput } from '@components/inputs';
+import { LinkText } from '@components/texts';
 import { loginSchema } from '@helpers/schemas';
 // import useFormError from '@hooks/useFormError';
 
@@ -67,7 +67,7 @@ export function LoginPage() {
               <PasswordInput name="password" label={t('password')} />
 
               <Stack alignItems="flex-end" gap={1}>
-                <TextLink
+                <LinkText
                   text={t('forgotPassword')}
                   to="/auth/forgot-password"
                   variant="body2"
@@ -78,7 +78,7 @@ export function LoginPage() {
                 </Button>
               </Stack>
 
-              <TextLink
+              <LinkText
                 text={t('alreadyHaveAcc')}
                 to="/auth/sign-up"
                 variant="body2"

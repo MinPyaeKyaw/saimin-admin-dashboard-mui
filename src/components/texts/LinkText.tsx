@@ -6,7 +6,7 @@ interface Props {
   to: string;
 }
 
-export function TextLink({ text, to, ...props }: Props & TypographyProps) {
+export function LinkText({ text, to, ...props }: Props & TypographyProps) {
   const navigate = useNavigate();
   const theme = useTheme();
 

@@ -8,4 +8,4 @@ export const Z_INDEXES = {
   MENU_BAR: 10,
 } as const;
 
-export const MOBILE_MEDIA_QUERY = '(min-width:600px)' as const;
+export const MOBILE_MEDIA_QUERY = '(min-width:900px)' as const;

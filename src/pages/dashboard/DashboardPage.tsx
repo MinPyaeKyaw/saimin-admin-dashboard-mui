@@ -1,9 +1,12 @@
 import { Grid, Paper, Typography, useTheme } from '@mui/material';
 import {
   SaiMinBarChart,
+  SaiMinHalfPieChart,
   SaiMinLineChart,
   SaiMinPieChart,
+  SaiMinScatterChart,
 } from '@components/charts';
+import { Center } from '@components/common/Center';
 import { Calendar, Message } from './components';
 
 export function DashboardPage() {
@@ -84,18 +87,20 @@ export function DashboardPage() {
 
   return (
     <Grid container spacing={2}>
-      <Grid item xs={8}>
+      <Grid item xs={12} md={8}>
         <Message />
       </Grid>
 
-      <Grid item xs={4}>
+      <Grid item xs={12} md={4}>
         <Paper>
           <Calendar />
         </Paper>
       </Grid>
 
       <Grid item xs={12}>
-        <Typography>Charts</Typography>
+        <Typography fontWeight="bold" variant="h3" marginTop={2}>
+          Charts
+        </Typography>
       </Grid>
 
       <Grid item xs={12} md={6}>
@@ -110,10 +115,34 @@ export function DashboardPage() {
         </Paper>
       </Grid>
 
-      <Grid item xs={12} md={6}>
+      <Grid item xs={12} md={4}>
         <Paper sx={{ padding: 1 }}>
-          <SaiMinPieChart />
+          <Center width="100%" height={200}>
+            <SaiMinPieChart />
+          </Center>
         </Paper>
+      </Grid>
+
+      <Grid item xs={12} md={4}>
+        <Paper sx={{ padding: 1 }}>
+          <Center width="100%" height={200}>
+            <SaiMinHalfPieChart />
+          </Center>
+        </Paper>
+      </Grid>
+
+      <Grid item xs={12} md={4}>
+        <Paper sx={{ padding: 1 }}>
+          <Center width="100%" height={200}>
+            <SaiMinScatterChart />
+          </Center>
+        </Paper>
+      </Grid>
+
+      <Grid item xs={12}>
+        <Typography fontWeight="bold" variant="h3" marginTop={2}>
+          Forms
+        </Typography>
       </Grid>
     </Grid>
   );

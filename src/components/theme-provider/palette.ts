@@ -13,10 +13,4 @@ export const palette = {
     dark: '#5c2a3c',
     contrastText: 'white',
   },
-  tertiary: {
-    light: '#3f6d91',
-    main: '#104976',
-    dark: '#0b3352',
-    contrastText: 'white',
-  },
 };
