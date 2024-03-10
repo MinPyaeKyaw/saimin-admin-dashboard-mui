@@ -25,6 +25,74 @@ export default function useMenus() {
       ),
     },
     {
+      name: 'Documentation',
+      route: '/documentation',
+      icon: (
+        <DashboardCustomizeOutlinedIcon
+          sx={{
+            marginX: 1,
+          }}
+        />
+      ),
+    },
+    {
+      name: 'Error Pages',
+      route: '/error-pages',
+      icon: (
+        <CollectionsOutlinedIcon
+          sx={{
+            marginX: 1,
+          }}
+        />
+      ),
+      children: [
+        {
+          name: '403',
+          route: '/403',
+          icon: (
+            <CollectionsOutlinedIcon
+              sx={{
+                marginX: 1,
+              }}
+            />
+          ),
+        },
+        {
+          name: '404',
+          route: '/404',
+          icon: (
+            <CollectionsOutlinedIcon
+              sx={{
+                marginX: 1,
+              }}
+            />
+          ),
+        },
+        {
+          name: '500',
+          route: '/500',
+          icon: (
+            <CollectionsOutlinedIcon
+              sx={{
+                marginX: 1,
+              }}
+            />
+          ),
+        },
+        {
+          name: '502',
+          route: '/502',
+          icon: (
+            <CollectionsOutlinedIcon
+              sx={{
+                marginX: 1,
+              }}
+            />
+          ),
+        },
+      ],
+    },
+    {
       name: t('products'),
       route: '/products',
       icon: (
@@ -45,41 +113,6 @@ export default function useMenus() {
           }}
         />
       ),
-    },
-    {
-      name: 'Nested',
-      route: '/nested',
-      icon: (
-        <CollectionsOutlinedIcon
-          sx={{
-            marginX: 1,
-          }}
-        />
-      ),
-      children: [
-        {
-          name: 'Child One',
-          route: '/child-one',
-          icon: (
-            <CollectionsOutlinedIcon
-              sx={{
-                marginX: 1,
-              }}
-            />
-          ),
-        },
-        {
-          name: 'Child Two',
-          route: '/child-two',
-          icon: (
-            <CollectionsOutlinedIcon
-              sx={{
-                marginX: 1,
-              }}
-            />
-          ),
-        },
-      ],
     },
     {
       name: 'test',

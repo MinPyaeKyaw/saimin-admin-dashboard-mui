@@ -8,8 +8,10 @@
   "welcomeback": "Welcome Back!",
   "pleaselogin": "Please log in to continue",
   "login": "Log in",
+  "signup": "Sign up",
   "forgotPassword": "Forgot password?",
   "alreadyHaveAcc": "Already have an account?",
+  "username": "Username",
   "email": "Email",
   "password": "Password"
 }

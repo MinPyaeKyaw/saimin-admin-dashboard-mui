@@ -8,8 +8,10 @@
   "welcomeback": "ပြန်လည်ကြိုဆိုပါတယ်!",
   "pleaselogin": "ကျေးဇူးပြုပြီး log in ဝင်ပါ",
   "login": "ဝင်မယ်",
+  "signup": "အကောင့်လုပ်မယ်",
   "forgotPassword": "လျှိုဝှက်ကုဒ်မေ့သွားပြီလား",
   "alreadyHaveAcc": "အကောင့်ရှိပြီးသားလား",
+  "username": "နာမည်",
   "email": "အီးမေးလ်",
   "password": "လျှိုဝှက်ကုဒ်"
 }

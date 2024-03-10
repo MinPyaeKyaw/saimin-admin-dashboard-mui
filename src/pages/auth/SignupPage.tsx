@@ -3,31 +3,36 @@ import { Button, Paper, Typography } from '@mui/material';
 import { Stack } from '@mui/system';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
-import { InputPassword, InputText } from '@components/inputs';
+import { CheckBox, InputPassword, InputText } from '@components/inputs';
 import { LinkText } from '@components/texts';
-import { loginSchema } from '@helpers/schemas';
+import { signupSchema } from '@helpers/schemas';
 
-type LoginFormValues = {
+type SignupFormValues = {
+  username: string;
   email: string;
   password: string;
+  terms: boolean;
 };
 
-export function LoginPage() {
+export function SignupPage() {
   const { t } = useTranslation();
 
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<LoginFormValues>({
+  } = useForm<SignupFormValues>({
     defaultValues: {
+      username: '',
       email: '',
       password: '',
+      terms: false,
     },
-    resolver: zodResolver(loginSchema),
+    resolver: zodResolver(signupSchema),
   });
 
-  const onSubmit = (data: LoginFormValues) => {};
+  console.log('errors', errors);
+  const onSubmit = (data: SignupFormValues) => console.log('signup', data);
 
   return (
     <Stack
@@ -58,6 +63,12 @@ export function LoginPage() {
             </Typography>
 
             <InputText
+              label={t('username')}
+              {...register('username')}
+              formError={errors.username}
+            />
+
+            <InputText
               label={t('email')}
               {...register('email')}
               formError={errors.email}
@@ -69,15 +80,15 @@ export function LoginPage() {
               formError={errors.password}
             />
 
-            <Stack alignItems="flex-end" gap={1}>
-              <LinkText
-                text={t('forgotPassword')}
-                to="/auth/forgot-password"
-                variant="body2"
-                color="gray"
+            <Stack alignItems="flex-start" gap={1}>
+              <CheckBox
+                label="Terms & conditions"
+                size="small"
+                {...register('terms')}
+                formError={errors.terms}
               />
               <Button type="submit" fullWidth>
-                {t('login')}
+                {t('signup')}
               </Button>
             </Stack>
 
