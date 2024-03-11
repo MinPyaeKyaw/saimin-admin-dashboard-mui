@@ -6,14 +6,14 @@ import { Outlet } from '@tanstack/react-router';
 import { MOBILE_MEDIA_QUERY } from '@configs/ui-consts';
 import { getSidebarWidth } from '@helpers/ui';
 import useGetBreadcrumbs from '@hooks/useGetBreadcrumbs';
-import useUserPreferencesStore from '@stores/userPreferencesStore';
+import useUserStore from '@stores/userStore';
 import { MenuBar, SideBar } from './components';
 import { MobileSideBarDrawer } from './components/MobileSideBarDrawer';
 
 export function DashboardLayout() {
   const breadcrumbs = useGetBreadcrumbs();
   const matches = useMediaQuery(MOBILE_MEDIA_QUERY);
-  const { sidebarOpen } = useUserPreferencesStore();
+  const { sidebarOpen } = useUserStore();
 
   const [toggleMobileSidebarDrawer, setToggleMobileSidebarDrawer] =
     useState<boolean>(false);

@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import { ThemeProvider } from '@mui/material';
-import useUserPreferencesStore from '@stores/userPreferencesStore';
+import useUserStore from '@stores/userStore';
 import { ErrorBoundary } from './ErrorBoundary';
 import { getTheme } from './theme';
 
@@ -12,7 +12,7 @@ interface Props {
  * @returns MUI theme provider to wrap children nodes
  */
 export default function MuiProvider({ children }: Props) {
-  const { mode } = useUserPreferencesStore();
+  const { mode } = useUserStore();
   const theme = getTheme(mode);
 
   return (

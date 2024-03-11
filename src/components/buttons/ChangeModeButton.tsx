@@ -1,10 +1,10 @@
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
 import { Tooltip, IconButton } from '@mui/material';
-import useUserPreferencesStore from '@stores/userPreferencesStore';
+import useUserStore from '@stores/userStore';
 
 export function ChangeModeButton() {
-  const { mode, changeMode } = useUserPreferencesStore();
+  const { mode, changeMode } = useUserStore();
 
   return (
     <Tooltip title={`Change ${mode === 'light' ? 'dark' : 'light'} mode`}>

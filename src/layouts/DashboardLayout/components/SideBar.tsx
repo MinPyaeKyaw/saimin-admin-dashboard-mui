@@ -9,7 +9,7 @@ import {
 } from '@configs/ui-consts';
 import { getSidebarWidth } from '@helpers/ui';
 import useGetMenus from '@hooks/useMenus';
-import useUserPreferencesStore from '@stores/userPreferencesStore';
+import useUserStore from '@stores/userStore';
 import { SidebarItem } from './SidebarItem';
 
 interface Props {
@@ -21,7 +21,7 @@ export function SideBar({ toggleMobileSibebar }: Props) {
   const matches = useMediaQuery(MOBILE_MEDIA_QUERY);
   const routerState = useRouterState();
   const theme = useTheme();
-  const { sidebarOpen } = useUserPreferencesStore();
+  const { sidebarOpen } = useUserStore();
   const { menus } = useGetMenus();
 
   return (

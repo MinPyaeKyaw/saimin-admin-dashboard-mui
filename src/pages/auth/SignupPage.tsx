@@ -31,7 +31,7 @@ export function SignupPage() {
     resolver: zodResolver(signupSchema),
   });
 
-  console.log('errors', errors);
+  // eslint-disable-next-line no-console
   const onSubmit = (data: SignupFormValues) => console.log('signup', data);
 
   return (
@@ -93,8 +93,8 @@ export function SignupPage() {
             </Stack>
 
             <LinkText
-              text={t('alreadyHaveAcc')}
-              to="/auth/sign-up"
+              text="Already have an account. Log in!"
+              to="/auth/login"
               variant="body2"
               color="gray"
               textAlign="center"

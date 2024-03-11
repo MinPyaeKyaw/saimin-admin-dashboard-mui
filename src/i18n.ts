@@ -2,10 +2,10 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import en from '@assets/localizations/en.json';
 import mm from '@assets/localizations/mm.json';
-import useUserPreferencesStore from '@stores/userPreferencesStore';
+import useUserStore from '@stores/userStore';
 
 // * Getting user preferences from local storage using zustand
-const UserPreferences = useUserPreferencesStore.getState();
+const user = useUserStore.getState();
 
 const resources = {
   en: {
@@ -18,7 +18,7 @@ const resources = {
 
 i18n.use(initReactI18next).init({
   resources,
-  lng: UserPreferences.lang,
+  lng: user.lang,
   interpolation: {
     escapeValue: false,
   },

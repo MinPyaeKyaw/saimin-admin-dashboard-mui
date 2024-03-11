@@ -11,7 +11,7 @@ import Popover from '@mui/material/Popover';
 import Typography from '@mui/material/Typography';
 import { useTranslation } from 'react-i18next';
 import { SUPPORTED_LANGS } from '@configs/langs';
-import useUserPreferencesStore from '@stores/userPreferencesStore';
+import useUserStore from '@stores/userStore';
 
 export function ChangeLangDropdown() {
   const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(
@@ -23,7 +23,7 @@ export function ChangeLangDropdown() {
   const id = open ? 'lang-popover' : undefined;
 
   const { i18n, t } = useTranslation();
-  const { changeLang } = useUserPreferencesStore();
+  const { changeLang } = useUserStore();
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);

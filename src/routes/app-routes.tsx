@@ -1,11 +1,10 @@
-import React from 'react';
 import {
   createRouter,
   createRoute,
   createRootRoute,
 } from '@tanstack/react-router';
 import { Error404 } from '@components/pages';
-import { redirectToLoginPage } from '@helpers/auth';
+import { redirectToDashboardPage, redirectToLoginPage } from '@helpers/auth';
 import { AuthLayout, DashboardLayout } from '@layouts/index';
 import {
   DashboardPage,
@@ -30,6 +29,7 @@ const authParentRoute = createRoute({
   path: '/auth',
   component: () => <AuthLayout />,
 });
+
 const dashboardParentRoute = createRoute({
   getParentRoute: () => appRoot,
   // path: '/',
@@ -44,24 +44,28 @@ const loginRoute = createRoute({
   getParentRoute: () => authParentRoute,
   path: '/login',
   component: () => <LoginPage />,
+  beforeLoad: redirectToDashboardPage,
 });
 
 const signupRoute = createRoute({
   getParentRoute: () => authParentRoute,
   path: '/sign-up',
   component: () => <SignupPage />,
+  beforeLoad: redirectToDashboardPage,
 });
 
 const forgetPasswordRoute = createRoute({
   getParentRoute: () => authParentRoute,
   path: '/forgot-password',
   component: () => <ForgetPasswordPage />,
+  beforeLoad: redirectToDashboardPage,
 });
 
 const otpRoute = createRoute({
   getParentRoute: () => authParentRoute,
   path: '/otp',
   component: () => <OTPPage />,
+  beforeLoad: redirectToDashboardPage,
 });
 
 /**

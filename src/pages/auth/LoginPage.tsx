@@ -1,11 +1,14 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Button, Paper, Typography } from '@mui/material';
 import { Stack } from '@mui/system';
+import { useNavigate } from '@tanstack/react-router';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { InputPassword, InputText } from '@components/inputs';
 import { LinkText } from '@components/texts';
+import { USER } from '@configs/mock-user';
 import { loginSchema } from '@helpers/schemas';
+import useUserStore from '@stores/userStore';
 
 type LoginFormValues = {
   email: string;
@@ -14,6 +17,8 @@ type LoginFormValues = {
 
 export function LoginPage() {
   const { t } = useTranslation();
+  const { updateUserInfo } = useUserStore();
+  const navigate = useNavigate();
 
   const {
     register,
@@ -27,7 +32,17 @@ export function LoginPage() {
     resolver: zodResolver(loginSchema),
   });
 
-  const onSubmit = (data: LoginFormValues) => {};
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const onSubmit = (data: LoginFormValues) => {
+    if (data.email === USER.email && data.password === USER.password) {
+      updateUserInfo({
+        username: USER.username,
+        email: USER.email,
+        token: 'jwt-token',
+      });
+      navigate({ to: '/' });
+    }
+  };
 
   return (
     <Stack
@@ -82,7 +97,7 @@ export function LoginPage() {
             </Stack>
 
             <LinkText
-              text={t('alreadyHaveAcc')}
+              text="You don't have an account? Sign up"
               to="/auth/sign-up"
               variant="body2"
               color="gray"

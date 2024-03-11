@@ -15,7 +15,7 @@ import {
   MOBILE_MEDIA_QUERY,
   Z_INDEXES,
 } from '@configs/ui-consts';
-import useUserPreferencesStore from '@stores/userPreferencesStore';
+import useUserStore from '@stores/userStore';
 
 interface Props {
   toggleMobileSibebar: Dispatch<SetStateAction<boolean>>;
@@ -24,7 +24,7 @@ interface Props {
 export function MenuBar({ toggleMobileSibebar }: Props) {
   const theme = useTheme();
   const matches = useMediaQuery(MOBILE_MEDIA_QUERY);
-  const { sidebarOpen, toggleSidebar } = useUserPreferencesStore();
+  const { sidebarOpen, toggleSidebar } = useUserStore();
 
   const user = {
     username: 'Sai Min',

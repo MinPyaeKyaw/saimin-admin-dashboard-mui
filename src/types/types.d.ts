@@ -40,9 +40,33 @@ declare global {
   export type LangType = 'en' | 'mm';
 
   interface UserPreferences {
+    info: {
+      username: string;
+      email: string;
+      token: string;
+    };
     mode: ModeType;
     lang: LangType;
     sidebarOpen: boolean;
+    toggleSidebar: (value: boolean) => void;
+    changeMode: (mode: ModeType) => void;
+    changeLang: (lang: LangType) => void;
+  }
+
+  interface User {
+    info: {
+      username: string;
+      email: string;
+      token: string;
+    };
+    mode: ModeType;
+    lang: LangType;
+    sidebarOpen: boolean;
+    updateUserInfo: (value: {
+      username: string;
+      email: string;
+      token: string;
+    }) => void;
     toggleSidebar: (value: boolean) => void;
     changeMode: (mode: ModeType) => void;
     changeLang: (lang: LangType) => void;
