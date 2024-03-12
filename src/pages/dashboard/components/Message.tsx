@@ -7,15 +7,10 @@ export function Message() {
 
   const handleClick = () => {
     openModal(
-      <Box
-        sx={{
-          width: '40%',
-          height: 400,
-          backgroundColor: 'white',
-        }}
-      >
-        <Typography>Hello</Typography>
-        <Button>Hello</Button>
+      <Box>
+        <Typography fontSize="large" fontWeight="bold" textAlign="center">
+          လီးပဲ ဟျောင့်
+        </Typography>
       </Box>
     );
   };
