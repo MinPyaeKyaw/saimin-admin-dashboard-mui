@@ -1,7 +1,25 @@
 import { Button, Box, useTheme, Typography, Stack } from '@mui/material';
+import useModalManager from '@hooks/useModalManager';
 
 export function Message() {
   const theme = useTheme();
+  const { openModal } = useModalManager();
+
+  const handleClick = () => {
+    openModal(
+      <Box
+        sx={{
+          width: '40%',
+          height: 400,
+          backgroundColor: 'white',
+        }}
+      >
+        <Typography>Hello</Typography>
+        <Button>Hello</Button>
+      </Box>
+    );
+  };
+
   return (
     <Stack
       sx={{
@@ -24,6 +42,7 @@ export function Message() {
 
       <Box>
         <Button
+          onClick={handleClick}
           variant="outlined"
           sx={{
             borderColor: 'white',

@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import { ThemeProvider } from '@mui/material';
+import { ModalContainer } from '@components/modals';
 import useUserStore from '@stores/userStore';
 import { ErrorBoundary } from './ErrorBoundary';
 import { getTheme } from './theme';
@@ -17,7 +18,12 @@ export default function MuiProvider({ children }: Props) {
 
   return (
     <ThemeProvider theme={theme}>
-      <ErrorBoundary>{children}</ErrorBoundary>
+      <ErrorBoundary>
+        <>
+          {children}
+          <ModalContainer />
+        </>
+      </ErrorBoundary>
     </ThemeProvider>
   );
 }
