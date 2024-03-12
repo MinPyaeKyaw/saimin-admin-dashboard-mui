@@ -6,6 +6,7 @@ export const DASHBOARD_LAYOUT_PADDING = 1 as const;
 
 export const Z_INDEXES = {
   MENU_BAR: 10,
+  MODAL: 50,
 } as const;
 
 export const MOBILE_MEDIA_QUERY = '(min-width:900px)' as const;
