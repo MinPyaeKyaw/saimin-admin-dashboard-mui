@@ -32,7 +32,6 @@ export function LoginPage() {
     resolver: zodResolver(loginSchema),
   });
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const onSubmit = (data: LoginFormValues) => {
     if (data.email === USER.email && data.password === USER.password) {
       updateUserInfo({

@@ -22,6 +22,11 @@ export const components: any = {
       size: 'small',
     },
   },
+  MuiSelect: {
+    defaultProps: {
+      size: 'small',
+    },
+  },
   MuiPaper: {
     defaultProps: {
       variant: 'outlined',

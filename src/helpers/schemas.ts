@@ -21,3 +21,10 @@ export const signupSchema = z.object({
   password: requiredString('Password is required!'),
   terms: requiredBoolean('Need to agree our terms & conditions!'),
 });
+
+export const exampleSchema = z.object({
+  requiredField: requiredString('This field is required!'),
+  email: requiredString('Email is required!'),
+  password: requiredString('Password is required!'),
+  terms: requiredBoolean('Need to agree our terms & conditions!'),
+});

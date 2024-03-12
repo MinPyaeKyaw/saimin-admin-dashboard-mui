@@ -7,7 +7,7 @@ import {
   SaiMinScatterChart,
 } from '@components/charts';
 import { Center } from '@components/common/Center';
-import { Calendar, Message } from './components';
+import { Calendar, Forms, Message } from './components';
 
 export function DashboardPage() {
   const theme = useTheme();
@@ -99,7 +99,7 @@ export function DashboardPage() {
 
       <Grid item xs={12}>
         <Typography fontWeight="bold" variant="h3" marginTop={2}>
-          Charts
+          Example Charts
         </Typography>
       </Grid>
 
@@ -141,8 +141,12 @@ export function DashboardPage() {
 
       <Grid item xs={12}>
         <Typography fontWeight="bold" variant="h3" marginTop={2}>
-          Forms
+          Example Form
         </Typography>
+      </Grid>
+
+      <Grid item xs={12}>
+        <Forms />
       </Grid>
     </Grid>
   );
