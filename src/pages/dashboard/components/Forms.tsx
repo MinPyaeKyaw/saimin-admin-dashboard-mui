@@ -1,7 +1,8 @@
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Button, Grid, MenuItem, Select } from '@mui/material';
+import { Button, Grid } from '@mui/material';
 import { useForm } from 'react-hook-form';
 import { InputText } from '@components/inputs';
+import { SelectBox } from '@components/inputs/SelectBox';
 import { loginSchema } from '@helpers/schemas';
 
 export function Forms() {
@@ -30,31 +31,30 @@ export function Forms() {
             label="Required Field"
             formError={errors.email}
             fullWidth
+            {...register('email')}
           />
         </Grid>
 
         <Grid item xs={12} md={6}>
           <InputText
             label="Optional Field"
-            formError={errors.email}
+            formError={errors.password}
             fullWidth
+            {...register('password')}
           />
         </Grid>
 
         <Grid item xs={12} md={6}>
-          <Select
-            fullWidth
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            {...register('select')}
-            // value={10}
+          <SelectBox
             label="Age"
-            // onChange={handleChange}
-          >
-            <MenuItem value={10}>Ten</MenuItem>
-            <MenuItem value={20}>Twenty</MenuItem>
-            <MenuItem value={30}>Thirty</MenuItem>
-          </Select>
+            formError={errors.select}
+            data={[
+              { label: 'Ten', value: '10' },
+              { label: 'Twenty', value: '20' },
+              { label: 'Thirty', value: '30' },
+            ]}
+            {...register('select')}
+          />
         </Grid>
 
         <Grid item xs={12} md={6}>
