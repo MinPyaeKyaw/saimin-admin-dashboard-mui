@@ -1,8 +1,7 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Button, Grid } from '@mui/material';
 import { useForm } from 'react-hook-form';
-import { InputText } from '@components/inputs';
-import { SelectBox } from '@components/inputs/SelectBox';
+import { InputText, RadioGroupBox, SelectBox } from '@components/inputs';
 import { loginSchema } from '@helpers/schemas';
 
 export function Forms() {
@@ -47,6 +46,19 @@ export function Forms() {
         <Grid item xs={12} md={6}>
           <SelectBox
             label="Age"
+            formError={errors.select}
+            data={[
+              { label: 'Ten', value: '10' },
+              { label: 'Twenty', value: '20' },
+              { label: 'Thirty', value: '30' },
+            ]}
+            // {...register('select')}
+          />
+        </Grid>
+
+        <Grid item xs={12} md={6}>
+          <RadioGroupBox
+            label="Gender"
             formError={errors.select}
             data={[
               { label: 'Ten', value: '10' },

@@ -17,6 +17,11 @@ export const components: any = {
       },
     },
   },
+  MuiInputLabel: {
+    defaultProps: {
+      size: 'small',
+    },
+  },
   MuiTextField: {
     defaultProps: {
       size: 'small',
