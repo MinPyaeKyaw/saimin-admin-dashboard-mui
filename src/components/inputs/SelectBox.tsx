@@ -1,10 +1,5 @@
-import {
-  Select,
-  MenuItem,
-  SelectProps,
-  FormControl,
-  InputLabel,
-} from '@mui/material';
+import { forwardRef } from 'react';
+import { MenuItem, TextField, TextFieldProps } from '@mui/material';
 import { FieldError } from 'react-hook-form';
 
 interface Props {
@@ -12,13 +7,17 @@ interface Props {
   data: { label: string; value: string }[];
 }
 
-export function SelectBox({ formError, data, ...props }: Props & SelectProps) {
-  return (
-    <FormControl fullWidth>
-      <InputLabel id="demo-simple-select-label">{props.label}</InputLabel>
-      <Select
-        labelId="demo-simple-select-label"
-        id="demo-simple-select"
+// eslint-disable-next-line react/display-name
+export const SelectBox = forwardRef(
+  ({ formError, data, ...props }: Props & TextFieldProps, ref) => {
+    return (
+      <TextField
+        inputRef={ref}
+        error={!!formError}
+        helperText={formError?.message}
+        select
+        fullWidth
+        defaultValue={props.defaultValue || ''}
         {...props}
       >
         {data.map((d) => (
@@ -26,7 +25,7 @@ export function SelectBox({ formError, data, ...props }: Props & SelectProps) {
             {d.label}
           </MenuItem>
         ))}
-      </Select>
-    </FormControl>
-  );
-}
+      </TextField>
+    );
+  }
+);

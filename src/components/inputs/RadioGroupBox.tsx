@@ -1,10 +1,11 @@
+import { forwardRef } from 'react';
 import {
-  FormControl,
-  FormLabel,
   RadioGroup,
   FormControlLabel,
   Radio,
   RadioGroupProps,
+  FormControl,
+  FormLabel,
 } from '@mui/material';
 import { FieldError } from 'react-hook-form';
 
@@ -14,30 +15,28 @@ interface Props {
   data: { label: string; value: string }[];
 }
 
-export function RadioGroupBox({
-  label,
-  formError,
-  data,
-  ...props
-}: Props & RadioGroupProps) {
-  return (
-    <FormControl>
-      <FormLabel id="demo-radio-buttons-group-label">{label}</FormLabel>
-      <RadioGroup
-        aria-labelledby="demo-radio-buttons-group-label"
-        defaultValue="female"
-        name="radio-buttons-group"
-        {...props}
-      >
-        {data.map((d) => (
-          <FormControlLabel
-            key={d.value}
-            value={d.value}
-            control={<Radio />}
-            label={d.label}
-          />
-        ))}
-      </RadioGroup>
-    </FormControl>
-  );
-}
+// eslint-disable-next-line react/display-name
+export const RadioGroupBox = forwardRef(
+  ({ formError, data, ...props }: Props & RadioGroupProps, ref) => {
+    return (
+      <FormControl>
+        <FormLabel>Gender</FormLabel>
+        <RadioGroup
+          name="gender"
+          defaultValue={props.defaultValue || ''}
+          {...props}
+        >
+          {data.map((d) => (
+            <FormControlLabel
+              key={d.value}
+              value={d.value}
+              control={<Radio />}
+              label={d.label}
+              inputRef={ref}
+            />
+          ))}
+        </RadioGroup>
+      </FormControl>
+    );
+  }
+);

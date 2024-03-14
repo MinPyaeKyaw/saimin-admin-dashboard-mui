@@ -14,6 +14,7 @@ export function Forms() {
       email: '',
       password: '',
       select: '',
+      radio: '',
     },
     resolver: zodResolver(loginSchema),
   });
@@ -52,7 +53,7 @@ export function Forms() {
               { label: 'Twenty', value: '20' },
               { label: 'Thirty', value: '30' },
             ]}
-            // {...register('select')}
+            {...register('select')}
           />
         </Grid>
 
@@ -65,12 +66,12 @@ export function Forms() {
               { label: 'Twenty', value: '20' },
               { label: 'Thirty', value: '30' },
             ]}
-            {...register('select')}
+            {...register('radio')}
           />
         </Grid>
 
         <Grid item xs={12} md={6}>
-          <Button>Submit</Button>
+          <Button type="submit">Submit</Button>
         </Grid>
       </Grid>
     </form>
