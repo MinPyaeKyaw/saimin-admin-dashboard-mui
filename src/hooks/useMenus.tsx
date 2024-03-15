@@ -47,17 +47,6 @@ export default function useMenus() {
       ),
       children: [
         {
-          name: '403',
-          route: '/403',
-          icon: (
-            <CollectionsOutlinedIcon
-              sx={{
-                marginX: 1,
-              }}
-            />
-          ),
-        },
-        {
           name: '404',
           route: '/404',
           icon: (

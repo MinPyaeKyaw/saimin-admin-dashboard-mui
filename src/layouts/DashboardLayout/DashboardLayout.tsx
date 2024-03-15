@@ -3,7 +3,7 @@ import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import { Box, Breadcrumbs, Stack, useMediaQuery } from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline';
 import { Outlet } from '@tanstack/react-router';
-import { MOBILE_MEDIA_QUERY } from '@configs/ui-consts';
+import { MENUBAR_HEIGHT, MOBILE_MEDIA_QUERY } from '@configs/ui-consts';
 import { getSidebarWidth } from '@helpers/ui';
 import useGetBreadcrumbs from '@hooks/useGetBreadcrumbs';
 import useUserStore from '@stores/userStore';
@@ -33,12 +33,19 @@ export function DashboardLayout() {
           onClose={setToggleMobileSidebarDrawer}
         />
 
-        <Box sx={{ flex: 1 }}>
+        <Stack
+          sx={{
+            flex: 1,
+            // display: 'flex',
+            // flexDirection: 'column',
+          }}
+        >
           <MenuBar toggleMobileSibebar={setToggleMobileSidebarDrawer} />
 
-          <Box
+          <Stack
             sx={{
               padding: 2,
+              minHeight: `calc(100vh - ${MENUBAR_HEIGHT}px)`,
             }}
           >
             <Breadcrumbs
@@ -49,8 +56,8 @@ export function DashboardLayout() {
             </Breadcrumbs>
 
             <Outlet />
-          </Box>
-        </Box>
+          </Stack>
+        </Stack>
       </Stack>
     </>
   );

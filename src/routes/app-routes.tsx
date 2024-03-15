@@ -3,7 +3,7 @@ import {
   createRoute,
   createRootRoute,
 } from '@tanstack/react-router';
-import { Error404 } from '@components/pages';
+import { Error404, Error500, Error502 } from '@components/pages';
 import { redirectToDashboardPage, redirectToLoginPage } from '@helpers/auth';
 import { AuthLayout, DashboardLayout } from '@layouts/index';
 import {
@@ -110,6 +110,18 @@ const authNotFoundRoute = createRoute({
   component: () => <Error404 />,
 });
 
+const serverErrorRoute = createRoute({
+  getParentRoute: () => dashboardParentRoute,
+  path: '/500',
+  component: () => <Error500 />,
+});
+
+const badGatewayRoute = createRoute({
+  getParentRoute: () => dashboardParentRoute,
+  path: '/502',
+  component: () => <Error502 />,
+});
+
 /**
  * * Route Tree
  */
@@ -126,6 +138,8 @@ const routeTree = appRoot.addChildren([
     otpRoute,
     authNotFoundRoute,
   ]),
+  serverErrorRoute,
+  badGatewayRoute,
 ]);
 
 export const appRouter = createRouter({
