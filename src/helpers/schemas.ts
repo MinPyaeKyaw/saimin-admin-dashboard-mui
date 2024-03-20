@@ -23,8 +23,10 @@ export const signupSchema = z.object({
 });
 
 export const exampleSchema = z.object({
-  requiredField: requiredString('This field is required!'),
-  email: requiredString('Email is required!'),
-  password: requiredString('Password is required!'),
-  terms: requiredBoolean('Need to agree our terms & conditions!'),
+  text: requiredString('This field is required!'),
+  select: requiredString('This field is required!'),
+  radioColumn: requiredString('This field is required!'),
+  radioRow: requiredString('This field is required!'),
+  singleCheckbox: requiredBoolean('This field is required!'),
+  checkboxGroup: requiredString('This field is required!'),
 });

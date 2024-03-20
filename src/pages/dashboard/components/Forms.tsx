@@ -1,8 +1,13 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Button, Grid } from '@mui/material';
 import { useForm } from 'react-hook-form';
-import { InputText, RadioGroupBox, SelectBox } from '@components/inputs';
-import { loginSchema } from '@helpers/schemas';
+import {
+  CheckBox,
+  InputText,
+  RadioGroupBox,
+  SelectBox,
+} from '@components/inputs';
+import { exampleSchema } from '@helpers/schemas';
 
 export function Forms() {
   const {
@@ -11,12 +16,13 @@ export function Forms() {
     formState: { errors },
   } = useForm({
     defaultValues: {
-      email: '',
-      password: '',
+      text: '',
+      singleCheckbox: '',
       select: '',
-      radio: '',
+      radioRow: '',
+      radioColumn: '',
     },
-    resolver: zodResolver(loginSchema),
+    resolver: zodResolver(exampleSchema),
   });
 
   const onSubmit = (): string => {
@@ -28,25 +34,16 @@ export function Forms() {
       <Grid container spacing={2}>
         <Grid item xs={12} md={6}>
           <InputText
-            label="Required Field"
-            formError={errors.email}
+            label="Required Text Field"
+            formError={errors.text}
             fullWidth
-            {...register('email')}
-          />
-        </Grid>
-
-        <Grid item xs={12} md={6}>
-          <InputText
-            label="Optional Field"
-            formError={errors.password}
-            fullWidth
-            {...register('password')}
+            {...register('text')}
           />
         </Grid>
 
         <Grid item xs={12} md={6}>
           <SelectBox
-            label="Age"
+            label="Required Select Box"
             formError={errors.select}
             data={[
               { label: 'Ten', value: '10' },
@@ -59,18 +56,41 @@ export function Forms() {
 
         <Grid item xs={12} md={6}>
           <RadioGroupBox
-            label="Gender"
-            formError={errors.select}
+            label="Required Verticle Radio"
             data={[
               { label: 'Ten', value: '10' },
               { label: 'Twenty', value: '20' },
               { label: 'Thirty', value: '30' },
             ]}
-            {...register('radio')}
+            {...register('radioColumn')}
+            formError={errors.radioColumn}
           />
         </Grid>
 
         <Grid item xs={12} md={6}>
+          <RadioGroupBox
+            label="Required Horizontal Radio"
+            row
+            data={[
+              { label: 'Ten', value: '10' },
+              { label: 'Twenty', value: '20' },
+              { label: 'Thirty', value: '30' },
+            ]}
+            {...register('radioRow')}
+            formError={errors.radioRow}
+          />
+        </Grid>
+
+        <Grid item xs={12}>
+          <CheckBox
+            label="Requried Single Check Box"
+            size="small"
+            {...register('singleCheckbox')}
+            formError={errors.singleCheckbox}
+          />
+        </Grid>
+
+        <Grid item xs={12}>
           <Button type="submit">Submit</Button>
         </Grid>
       </Grid>

@@ -6,6 +6,7 @@ import {
   RadioGroupProps,
   FormControl,
   FormLabel,
+  FormHelperText,
 } from '@mui/material';
 import { FieldError } from 'react-hook-form';
 
@@ -17,10 +18,10 @@ interface Props {
 
 // eslint-disable-next-line react/display-name
 export const RadioGroupBox = forwardRef(
-  ({ formError, data, ...props }: Props & RadioGroupProps, ref) => {
+  ({ formError, label, data, ...props }: Props & RadioGroupProps, ref) => {
     return (
-      <FormControl>
-        <FormLabel>Gender</FormLabel>
+      <FormControl error={!!formError?.message}>
+        <FormLabel id="demo-error-radios">{label}</FormLabel>
         <RadioGroup
           name="gender"
           defaultValue={props.defaultValue || ''}
@@ -36,6 +37,7 @@ export const RadioGroupBox = forwardRef(
             />
           ))}
         </RadioGroup>
+        <FormHelperText>{formError?.message}</FormHelperText>
       </FormControl>
     );
   }
