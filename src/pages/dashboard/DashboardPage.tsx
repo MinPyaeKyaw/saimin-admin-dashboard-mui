@@ -99,7 +99,7 @@ export function DashboardPage() {
 
       <Grid item xs={12}>
         <Typography fontWeight="bold" variant="h3" marginTop={2}>
-          Snack Bars
+          Snackbars
         </Typography>
       </Grid>
 

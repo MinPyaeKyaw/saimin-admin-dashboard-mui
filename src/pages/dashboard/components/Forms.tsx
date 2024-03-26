@@ -1,5 +1,5 @@
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Button, Grid } from '@mui/material';
+import { Button, Grid, Stack } from '@mui/material';
 import { useForm } from 'react-hook-form';
 import {
   CheckBox,
@@ -12,6 +12,7 @@ import { exampleSchema } from '@helpers/schemas';
 export function Forms() {
   const {
     register,
+    reset,
     handleSubmit,
     formState: { errors },
   } = useForm({
@@ -91,7 +92,13 @@ export function Forms() {
         </Grid>
 
         <Grid item xs={12}>
-          <Button type="submit">Submit</Button>
+          <Stack spacing={2} direction="row" justifyContent="flex-end">
+            <Button onClick={() => reset()} variant="outlined">
+              Reset
+            </Button>
+
+            <Button type="submit">Submit</Button>
+          </Stack>
         </Grid>
       </Grid>
     </form>
