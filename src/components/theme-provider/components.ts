@@ -8,7 +8,6 @@ export const components: any = {
       size: 'medium',
       variant: 'contained',
       sx: {
-        // color: 'white',
         borderRadius: 1,
         boxShadow: 'none',
         '&:hover': {

@@ -5,6 +5,21 @@ export function getSidebarWidth(sideBarOpen: boolean): number {
   return SIDEBAR_WIDTH;
 }
 
-export function capitalizeFirstLetter(word: string) {
-  return word.charAt(0).toUpperCase() + word.slice(1);
+export function convertCamelCaseToSpacedString(
+  camelCaseString: string
+): string {
+  // Check if the input is empty or not a string
+  if (camelCaseString.length === 0) {
+    return '';
+  }
+
+  // Split the string by uppercase letters
+  const wordsArray = camelCaseString.split(/(?=[A-Z])/);
+
+  // Capitalize the first letter of each word and join them with spaces
+  const spacedString = wordsArray
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
+
+  return spacedString;
 }

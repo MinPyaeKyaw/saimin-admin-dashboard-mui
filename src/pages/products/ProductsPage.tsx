@@ -1,8 +1,8 @@
 // import { useState } from 'react';
-import { Button } from '@mui/material';
+import { Box, Button } from '@mui/material';
 import { useNavigate } from '@tanstack/react-router';
-// import { DataTable } from '@components/tables';
-// import { useGetAllProducts } from '@services/products-queries';
+import { DataTable } from '@components/tables';
+import { useGetAllProducts } from '@services/products-queries';
 
 export function PostsPage() {
   const navigate = useNavigate();
@@ -11,22 +11,33 @@ export function PostsPage() {
   //   page: 0,
   // });
 
-  // const { data } = useGetAllProducts(paginationParams);
+  const { data, isLoading } = useGetAllProducts({
+    pageSize: 5,
+    page: 0,
+  });
 
   return (
-    <>
-      <Button
-        variant="contained"
-        onClick={() => navigate({ to: '/products/create' })}
-      >
-        Go to create
-      </Button>
+    <Box
+      sx={{
+        width: '100%',
+      }}
+    >
+      <Box sx={{ marginBottom: 3 }}>
+        <Button
+          variant="contained"
+          onClick={() => navigate({ to: '/products/create' })}
+        >
+          Go to create
+        </Button>
+      </Box>
 
-      {/* <DataTable
-        data={data?.products}
-        meta={data}
-        onPaginationChange={(e) => setPaginationParams(e)}
-      /> */}
-    </>
+      <Box
+        sx={{
+          width: 1000,
+        }}
+      >
+        {isLoading ? 'loading' : <DataTable data={data.products} />}
+      </Box>
+    </Box>
   );
 }
