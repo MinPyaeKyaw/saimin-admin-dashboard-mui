@@ -23,3 +23,18 @@ export function convertCamelCaseToSpacedString(
 
   return spacedString;
 }
+
+export function truncateText(text: string, maxLength: number): string {
+  if (text.length > maxLength) {
+    return `${text.substring(0, maxLength)}...`;
+  }
+  return text;
+}
+
+export function isURL(text: string): boolean {
+  // Regular expression pattern to match URLs
+  const urlPattern = /^(ftp|http|https):\/\/[^ "]+$/;
+
+  // Test if the text matches the URL pattern
+  return urlPattern.test(text);
+}

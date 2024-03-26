@@ -23,7 +23,11 @@ export function DashboardLayout() {
       <CssBaseline />
       <Stack direction="row">
         {matches && (
-          <Box sx={{ width: getSidebarWidth(sidebarOpen) }}>
+          <Box
+            sx={{
+              width: getSidebarWidth(sidebarOpen),
+            }}
+          >
             <SideBar />
           </Box>
         )}
@@ -35,9 +39,9 @@ export function DashboardLayout() {
 
         <Stack
           sx={{
-            flex: 1,
-            // display: 'flex',
-            // flexDirection: 'column',
+            width: matches
+              ? `calc(100vw - ${getSidebarWidth(sidebarOpen)}px)`
+              : '100%',
           }}
         >
           <MenuBar toggleMobileSibebar={setToggleMobileSidebarDrawer} />
@@ -46,6 +50,7 @@ export function DashboardLayout() {
             sx={{
               padding: 2,
               minHeight: `calc(100vh - ${MENUBAR_HEIGHT}px)`,
+              position: 'relative',
             }}
           >
             <Breadcrumbs
