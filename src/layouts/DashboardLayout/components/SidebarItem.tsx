@@ -103,7 +103,7 @@ export function SidebarItem({
         }}
         {...props}
       >
-        <Stack direction="row" width="100%">
+        <Stack direction="row" alignItems="center" width="100%">
           {menu.icon}
 
           <Stack direction="row" justifyContent="space-between" width="100%">

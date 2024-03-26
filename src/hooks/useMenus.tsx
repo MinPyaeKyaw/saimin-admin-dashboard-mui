@@ -18,6 +18,7 @@ export default function useMenus() {
       route: '/',
       icon: (
         <DashboardCustomizeOutlinedIcon
+          fontSize="small"
           sx={{
             marginX: 1,
           }}
@@ -29,6 +30,7 @@ export default function useMenus() {
       route: '/documentation',
       icon: (
         <DashboardCustomizeOutlinedIcon
+          fontSize="small"
           sx={{
             marginX: 1,
           }}
@@ -40,6 +42,7 @@ export default function useMenus() {
       route: '/error-pages',
       icon: (
         <CollectionsOutlinedIcon
+          fontSize="small"
           sx={{
             marginX: 1,
           }}
@@ -51,6 +54,7 @@ export default function useMenus() {
           route: '/404',
           icon: (
             <CollectionsOutlinedIcon
+              fontSize="small"
               sx={{
                 marginX: 1,
               }}
@@ -62,6 +66,7 @@ export default function useMenus() {
           route: '/500',
           icon: (
             <CollectionsOutlinedIcon
+              fontSize="small"
               sx={{
                 marginX: 1,
               }}
@@ -73,6 +78,7 @@ export default function useMenus() {
           route: '/502',
           icon: (
             <CollectionsOutlinedIcon
+              fontSize="small"
               sx={{
                 marginX: 1,
               }}
@@ -86,6 +92,7 @@ export default function useMenus() {
       route: '/products',
       icon: (
         <ProductionQuantityLimitsOutlinedIcon
+          fontSize="small"
           sx={{
             marginX: 1,
           }}
@@ -97,6 +104,7 @@ export default function useMenus() {
       route: '/albums',
       icon: (
         <CollectionsOutlinedIcon
+          fontSize="small"
           sx={{
             marginX: 1,
           }}
@@ -108,6 +116,7 @@ export default function useMenus() {
       route: '/test',
       icon: (
         <CollectionsOutlinedIcon
+          fontSize="small"
           sx={{
             marginX: 1,
           }}
