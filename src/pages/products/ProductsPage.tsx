@@ -1,7 +1,7 @@
 import { Box } from '@mui/material';
 import { DataTable } from '@components/tables';
 import { useGetAllProducts } from '@services/products-queries';
-import { TableTitle, TableTopToolbar } from './components';
+import { TableTitle, TableTopToolbar, tableAction } from './components';
 
 export function PostsPage() {
   const {
@@ -21,10 +21,12 @@ export function PostsPage() {
         data={data.products}
         title={<TableTitle />}
         topToolbar={<TableTopToolbar refetch={refetch} />}
+        colsToRemove={['images', 'thumbnail']}
         enableRowSelection
         enableRowActions
         pinActions
         pinSelectors
+        actionCells={tableAction}
       />
     </Box>
   );

@@ -4,7 +4,7 @@ import {
   useMaterialReactTable,
 } from 'material-react-table';
 import { DataTableLoader } from '@components/loaders';
-import { convertCamelCaseToSpacedString, isURL } from '@helpers/ui';
+import { convertCamelCaseToSpacedString } from '@helpers/ui';
 import { TextCell } from './components';
 
 interface Props {
@@ -18,6 +18,8 @@ interface Props {
   leftPinnedCols?: string[];
   pinActions?: boolean;
   pinSelectors?: boolean;
+  colsToRemove?: string[];
+  actionCells?: any;
 }
 
 export function DataTable({
@@ -31,6 +33,8 @@ export function DataTable({
   leftPinnedCols = [],
   pinActions = false,
   pinSelectors = false,
+  colsToRemove = [],
+  actionCells,
 }: Props) {
   // Defining table column
   const columns = useMemo(() => {
@@ -40,11 +44,7 @@ export function DataTable({
           /**
            * Removing images and links from table columns
            */
-          if (
-            (typeof data[0][col] === 'string' ||
-              typeof data[0][col] === 'number') &&
-            !isURL(data[0][col])
-          ) {
+          if (!colsToRemove.includes(col)) {
             return true;
           }
 
@@ -58,7 +58,7 @@ export function DataTable({
     }
 
     return [];
-  }, [data, isLoading]);
+  }, [colsToRemove, data, isLoading]);
 
   /**
    *  Defining columns to pin at right side
@@ -102,7 +102,7 @@ export function DataTable({
       shape: 'rounded',
       variant: 'text',
     },
-    // renderRowActionMenuItems: ({ closeMenu }) => actoinCells(closeMenu),
+    renderRowActionMenuItems: () => actionCells,
     renderTopToolbarCustomActions: () => topToolbar,
   });
 
